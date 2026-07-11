@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clostide-W · أوركيد النماء | Awrkid Alnmaa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEF4FB;--navy:#0B2E4F;--navy-deep:#06203A;
+    --blue:#1668C0;--blue-2:#2E8BDD;--azure:#57B4F2;
+    --sky:#DBEAF8;--sky-line:#C9DEF3;
+    --gold:#E7A93C;--gold-soft:#F3C877;--coral:#E0674E;
+    --ink:#0E2740;--muted:#5E7690;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);min-height:100vh;overflow-x:hidden;position:relative;
+    background-image:radial-gradient(circle at 12% 8%,rgba(87,180,242,.14),transparent 42%),radial-gradient(circle at 88% 92%,rgba(11,46,79,.10),transparent 46%);}
+
+  /* ===== نطاق الخطوط لكل لغة ===== */
+  .wrap.ar{--font-disp:"Cairo",system-ui,sans-serif;--font-body:"Tajawal",system-ui,sans-serif;--fw-disp:900}
+  .wrap.en{--font-disp:"Times New Roman",Times,Georgia,serif;--font-body:"Times New Roman",Times,Georgia,serif;--fw-disp:700}
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:clamp(24px,5vw,56px) clamp(20px,4vw,40px);font-family:var(--font-body)}
+
+  .ambient{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+  .bub{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(87,180,242,.5),rgba(46,139,221,.15));animation:rise linear infinite}
+  @keyframes rise{0%{transform:translateY(112vh) scale(.6);opacity:0}10%{opacity:.5}90%{opacity:.4}100%{transform:translateY(-14vh) scale(1);opacity:0}}
+
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:clamp(38px,7vw,76px)}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(150deg,var(--blue),var(--navy));display:grid;place-items:center;color:#fff;font-size:20px;box-shadow:0 8px 20px -6px rgba(22,104,192,.55)}
+  .brand .bt{line-height:1.25}
+  .brand .bt .p{font-family:var(--font-disp);font-weight:var(--fw-disp);font-size:20px;color:var(--navy)}
+  .brand .bt .s{font-size:12px;color:var(--muted)}
+  .en .brand .bt .s{font-style:italic}
+  .nav{display:flex;align-items:center;gap:10px}
+  .lang{font-family:var(--font-disp);font-weight:700;font-size:14px;color:var(--navy);border:1.5px solid var(--sky-line);background:#fff;border-radius:999px;padding:9px 15px;cursor:pointer;transition:all .2s}
+  .lang:hover{border-color:var(--blue);color:var(--blue)}
+  .navcta{font-family:var(--font-disp);font-weight:700;font-size:14px;color:#fff;background:var(--blue);border-radius:999px;padding:10px 20px;border:none;cursor:pointer;box-shadow:0 8px 20px -8px rgba(22,104,192,.7);transition:transform .2s,background .2s}
+  .navcta:hover{transform:translateY(-2px);background:var(--navy)}
+
+  /* البطل */
+  .hero{text-align:center;margin-bottom:clamp(58px,9vw,100px)}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-disp);font-weight:700;font-size:13.5px;letter-spacing:.5px;color:var(--blue);background:rgba(22,104,192,.09);border:1px solid rgba(22,104,192,.20);padding:8px 16px;border-radius:999px;margin-bottom:22px}
+  .en .eyebrow{text-transform:uppercase}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--azure);animation:pulse 1.8s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+  h1{font-family:var(--font-disp);font-weight:var(--fw-disp);font-size:clamp(28px,4.8vw,48px);line-height:1.35;color:var(--navy);margin-bottom:16px}
+  h1 span{color:var(--blue)}
+  .sub{font-size:clamp(15px,2.4vw,19px);color:var(--ink);max-width:660px;margin:0 auto 44px;line-height:2}
+  .ar .sub{font-weight:500}
+  .sub .hl{color:var(--blue);font-weight:700}
+  .odometer{direction:ltr;display:inline-flex;gap:7px;padding:22px clamp(12px,2.6vw,26px);background:linear-gradient(180deg,var(--navy),var(--navy-deep));border-radius:22px;box-shadow:0 26px 60px -22px rgba(11,46,79,.6),inset 0 2px 0 rgba(255,255,255,.07);border:1px solid rgba(87,180,242,.22);max-width:100%}
+  .cell{position:relative;width:clamp(34px,6.6vw,58px);height:clamp(58px,11.6vw,94px);background:linear-gradient(180deg,#123B62,#08243D);border-radius:11px;overflow:hidden;box-shadow:inset 0 3px 8px rgba(0,0,0,.5),inset 0 -2px 4px rgba(255,255,255,.06)}
+  .cell::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.45);z-index:3}
+  .cell::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.12),transparent 30%,transparent 70%,rgba(0,0,0,.3));z-index:2}
+  .cell .num{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--font-disp);font-weight:var(--fw-disp);font-size:clamp(28px,5.6vw,50px);color:var(--gold-soft);text-shadow:0 2px 6px rgba(0,0,0,.5)}
+  .cell.roll .num{animation:roll .18s ease-out}
+  @keyframes roll{0%{transform:translateY(-14%);opacity:.55}100%{transform:translateY(0);opacity:1}}
+  .sep{align-self:flex-end;padding-bottom:14px;font-family:var(--font-disp);font-weight:var(--fw-disp);font-size:clamp(24px,4.8vw,44px);color:rgba(243,200,119,.5)}
+  .counter-label{margin-bottom:18px;font-family:var(--font-disp);font-weight:700;font-size:clamp(16px,2.6vw,22px);color:var(--navy)}
+  .counter-label b{color:var(--blue)}
+  .grow{margin-top:22px;display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--muted);background:rgba(87,180,242,.12);border-radius:999px;padding:7px 16px}
+  .en .grow{font-style:italic}
+  .grow .up{color:var(--blue);font-style:normal;animation:bob 1.6s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+
+  /* شعار الموضعة */
+  .thesis{background:linear-gradient(155deg,var(--blue),var(--navy) 75%);border-radius:26px;padding:clamp(30px,4.5vw,52px);text-align:center;color:#EAF3FC;margin-bottom:clamp(58px,9vw,100px);box-shadow:0 26px 60px -26px rgba(11,46,79,.6);position:relative;overflow:hidden}
+  .thesis::after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(87,180,242,.25),transparent 70%);top:-140px;left:-80px}
+  .thesis .k{position:relative;font-family:var(--font-disp);font-weight:700;font-size:12.5px;letter-spacing:1.5px;color:var(--gold-soft);text-transform:uppercase;margin-bottom:16px}
+  .thesis h2{position:relative;font-family:var(--font-disp);font-weight:var(--fw-disp);font-size:clamp(22px,4vw,37px);line-height:1.5}
+  .thesis h2 .keep{color:var(--gold-soft)}
+  .thesis h2 .cut{color:#F2A28D}
+  .thesis p{position:relative;max-width:660px;margin:20px auto 0;font-size:clamp(14px,2.2vw,17.5px);line-height:2;color:#CBDEEF}
+
+  /* عناوين الأقسام */
+  .sec-head{text-align:center;margin-bottom:clamp(26px,4vw,40px)}
+  .sec-head .kick{font-family:var(--font-disp);font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;color:var(--blue)}
+  .sec-head h2{font-family:var(--font-disp);font-weight:var(--fw-disp);font-size:clamp(22px,3.8vw,33px);color:var(--navy);line-height:1.4}
+
+  /* التبويبات */
+  .tabs{display:flex;justify-content:center;margin-bottom:30px}
+  .tabbar{display:inline-flex;background:#fff;border:1px solid var(--sky-line);border-radius:999px;padding:5px;gap:4px;box-shadow:0 8px 22px -14px rgba(11,46,79,.4)}
+  .tab{font-family:var(--font-disp);border:none;background:transparent;font-weight:700;font-size:14.5px;color:var(--muted);padding:11px clamp(16px,3vw,26px);border-radius:999px;cursor:pointer;transition:all .25s;white-space:nowrap}
+  .tab.active{background:var(--blue);color:#fff;box-shadow:0 8px 18px -8px rgba(22,104,192,.7)}
+  .tab-panel{display:none}
+  .tab-panel.active{display:block;animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+  .keep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .kcard{background:#fff;border:1px solid var(--sky-line);border-radius:20px;padding:28px 24px;transition:transform .25s,box-shadow .25s}
+  .kcard:hover{transform:translateY(-5px);box-shadow:0 22px 44px -20px rgba(11,46,79,.4)}
+  .kcard .ic{width:50px;height:50px;border-radius:15px;background:linear-gradient(150deg,var(--blue),var(--navy));color:#fff;display:grid;place-items:center;font-size:23px;margin-bottom:16px;box-shadow:0 10px 22px -10px rgba(22,104,192,.6)}
+  .kcard h3{font-family:var(--font-disp);font-weight:var(--fw-disp);font-size:18.5px;color:var(--navy);margin-bottom:14px;line-height:1.4}
+  .kcard ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .kcard li{display:flex;gap:10px;font-size:15px;line-height:1.7;color:var(--ink)}
+  .kcard li::before{content:"✓";color:var(--blue);font-weight:700;flex-shrink:0}
+  .kcard .lat{color:var(--blue);font-weight:700}
+  .en .kcard .lat{font-style:italic}
+
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .rcard{background:#fff;border:1px solid var(--sky-line);border-radius:20px;padding:26px 24px}
+  .rcard .rhead{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .rcard .rn{font-family:var(--font-disp);width:37px;height:37px;border-radius:11px;background:rgba(224,103,78,.12);color:var(--coral);display:grid;place-items:center;font-weight:700;font-size:15.5px;flex-shrink:0}
+  .rcard .rtitle{font-family:var(--font-disp);font-weight:var(--fw-disp);font-size:17px;color:var(--navy);line-height:1.4}
+  .rcard .rtitle .lat{font-size:13.5px;color:var(--muted)}
+  .en .rcard .rtitle .lat{font-style:italic}
+  .rcard .rold{display:flex;gap:9px;font-size:14.5px;color:#9A8178;line-height:1.6;margin-bottom:14px}
+  .rcard .rold::before{content:"✕";color:var(--coral);opacity:.75;font-weight:700;flex-shrink:0}
+  .rcard .rold s{text-decoration-color:rgba(224,103,78,.5)}
+  .rcard .rnew{display:flex;gap:9px;font-size:15px;color:var(--ink);line-height:1.7;background:rgba(22,104,192,.06);border-radius:12px;padding:13px 14px}
+  .ar .rcard .rnew{font-weight:500}
+  .rcard .rnew::before{content:"✓";color:var(--blue);font-weight:700;flex-shrink:0;font-size:16px}
+  .rcard .rnew b{color:var(--navy)}
+
+  /* كيف يعمل */
+  .how{background:#fff;border:1px solid var(--sky-line);border-radius:24px;padding:clamp(28px,4vw,44px);text-align:center;margin:clamp(56px,9vw,100px) 0;box-shadow:0 18px 44px -26px rgba(11,46,79,.4)}
+  .how .spark{font-size:30px;margin-bottom:12px}
+  .how h3{font-family:var(--font-disp);font-weight:var(--fw-disp);font-size:clamp(20px,3vw,27px);color:var(--navy);margin-bottom:16px}
+  .how p{font-size:clamp(15px,2.3vw,18.5px);line-height:2;max-width:740px;margin:0 auto;color:var(--ink)}
+  .how b{color:var(--navy);font-weight:700}
+  .how .lat{color:var(--blue);font-weight:700}
+  .en .how .lat{font-style:italic}
+  .how .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+  .how .chip{font-family:var(--font-disp);background:linear-gradient(150deg,var(--blue),var(--navy));color:#fff;font-weight:700;font-size:13.5px;border-radius:999px;padding:9px 17px}
+
+  /* الأكورديون */
+  .faq{max-width:780px;margin:0 auto clamp(56px,9vw,100px)}
+  .acc-item{background:#fff;border:1px solid var(--sky-line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:box-shadow .25s}
+  .acc-item.open{box-shadow:0 16px 34px -20px rgba(11,46,79,.4)}
+  .acc-q{font-family:var(--font-disp);width:100%;border:none;background:transparent;padding:19px 22px;font-weight:700;font-size:16.5px;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .ar .acc-q{text-align:right}
+  .en .acc-q{text-align:left}
+  .acc-q .plus{width:26px;height:26px;flex-shrink:0;border-radius:8px;background:rgba(22,104,192,.10);color:var(--blue);display:grid;place-items:center;font-size:18px;font-weight:700;transition:transform .3s}
+  .acc-item.open .plus{transform:rotate(45deg);background:var(--blue);color:#fff}
+  .acc-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .acc-a .inner{padding:0 22px 20px;font-size:15px;line-height:1.9;color:var(--muted)}
+  .acc-a .lat{color:var(--blue);font-weight:700}
+  .en .acc-a .lat{font-style:italic}
+
+  /* المقارنة */
+  .compare{background:linear-gradient(155deg,var(--navy),var(--navy-deep));border-radius:26px;padding:clamp(28px,4vw,44px);color:#EAF3FC;margin-bottom:clamp(56px,9vw,100px)}
+  .compare .ch{text-align:center;margin-bottom:28px}
+  .compare .ch .kick{font-family:var(--font-disp);color:var(--gold-soft);font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+  .compare .ch h2{font-family:var(--font-disp);font-weight:var(--fw-disp);font-size:clamp(20px,3.2vw,29px)}
+  .bars{display:flex;flex-direction:column;gap:13px;max-width:640px;margin:0 auto}
+  .bar{display:grid;grid-template-columns:120px 1fr auto;align-items:center;gap:14px}
+  .bar .name{font-weight:700;font-size:14.5px}
+  .ar .bar .name{direction:ltr;text-align:right}
+  .en .bar .name{text-align:left}
+  .bar .track{height:26px;background:rgba(255,255,255,.08);border-radius:8px;overflow:hidden}
+  .bar .fill{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--coral),#EE8A72);width:0;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+  .bar .val{font-family:var(--font-disp);font-weight:700;font-size:14.5px;min-width:68px;direction:ltr}
+  .ar .bar .val{text-align:left}
+  .en .bar .val{text-align:right}
+  .bar.win .fill{background:linear-gradient(90deg,var(--azure),var(--gold-soft))}
+  .bar.win .name,.bar.win .val{color:var(--gold-soft)}
+  .bar.win .track{background:rgba(87,180,242,.16)}
+
+  /* الشركة */
+  .contact{background:#fff;border:1px solid var(--sky-line);border-radius:26px;padding:clamp(30px,4.5vw,48px);text-align:center;box-shadow:0 20px 50px -28px rgba(11,46,79,.45);margin-bottom:40px}
+  .contact .clogo{width:64px;height:64px;border-radius:18px;background:linear-gradient(150deg,var(--blue),var(--navy));display:grid;place-items:center;font-size:30px;margin:0 auto 18px;box-shadow:0 14px 30px -12px rgba(22,104,192,.6)}
+  .contact .cname{font-family:var(--font-disp);font-weight:var(--fw-disp);font-size:clamp(23px,3.4vw,31px);color:var(--navy);margin-bottom:6px}
+  .contact .ctag{font-size:15px;color:var(--muted);margin-bottom:26px}
+  .en .contact .ctag{font-style:italic}
+  .phone{display:inline-flex;align-items:center;gap:12px;background:var(--sky);border-radius:14px;padding:14px 24px;margin-bottom:22px}
+  .phone .pic{font-size:20px}
+  .phone .pn{font-family:var(--font-disp);font-weight:var(--fw-disp);font-size:clamp(18px,3vw,24px);color:var(--navy);direction:ltr;letter-spacing:1px}
+  .cbtns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .cbtn{font-family:var(--font-disp);display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;text-decoration:none;padding:14px 26px;border-radius:14px;transition:transform .2s,box-shadow .2s}
+  .cbtn.call{background:var(--blue);color:#fff;box-shadow:0 12px 26px -12px rgba(22,104,192,.7)}
+  .cbtn.wa{background:#EAF3FC;color:var(--navy);border:1px solid var(--sky-line)}
+  .cbtn:hover{transform:translateY(-3px)}
+  .cbtn.call:hover{box-shadow:0 16px 30px -12px rgba(22,104,192,.85)}
+
+  footer{text-align:center;padding-top:26px;border-top:1px solid var(--sky-line)}
+  footer .fbrand{font-family:var(--font-disp);font-weight:var(--fw-disp);font-size:18px;color:var(--navy);margin-bottom:6px}
+  footer .fnote{font-size:13.5px;color:var(--muted);line-height:1.9}
+
+  @media(max-width:820px){.keep-grid{grid-template-columns:1fr}}
+  @media(max-width:640px){
+    .navcta{display:none}
+    .risk-grid{grid-template-columns:1fr}
+    .bar{grid-template-columns:94px 1fr auto;gap:10px}.bar .name{font-size:12.5px}
+  }
+  @media(prefers-reduced-motion:reduce){.bub{display:none}.cell.roll .num{animation:none}.bar .fill{transition:none}.grow .up{animation:none}}
+</style>
+</head>
+<body>
+<div class="ambient" id="ambient"></div>
+
+<!-- ================= العربية ================= -->
+<div class="wrap ar" id="wrap-ar">
+  <div class="topbar">
+    <div class="brand">
+      <span class="mark">🛡️</span>
+      <span class="bt"><span class="p">Clostide-W</span><span class="s">من أوركيد النماء</span></span>
+    </div>
+    <div class="nav">
+      <button class="lang" onclick="setLang('en')">EN</button>
+      <button class="navcta" onclick="goContact(this)">تواصل معنا</button>
+    </div>
+  </div>
+
+  <section class="hero">
+    <span class="eyebrow"><span class="dot"></span> أثر المنتج في السوق</span>
+    <h1><span>Clostide-W</span></h1>
+    <p class="sub">في الماضي كنّا نحتاج للمضادات الحيوية كمحفّزات للنمو وللسيطرة المبكرة على المشكلات… حتى تمّ منع ذلك. <span class="hl">الآن لدينا نفس الميزة — بدون مخاطر.</span></p>
+    <div class="counter-label">إجمالي <b>الطيور المعالجة بالمملكة العربيه السعوديه</b> بلغ</div>
+    <div class="odometer" aria-label="عدّاد الطيور المحمية"></div>
+    <div class="grow"><span class="up">📈</span> والرقم يتزايد كل يوم</div>
+  </section>
+
+  <section class="thesis">
+    <div class="k">فكرة المنتج</div>
+    <h2>كل <span class="keep">مكاسب</span> محفّزات النمو (AGPs)<br>دون أيٍّ من <span class="cut">مخاطرها</span></h2>
+    <p>لعقودٍ كانت المضادات الحيوية بجرعات تحت علاجية ركيزةَ الإنتاج الداجني. يمنحك Clostide-W نفس المكاسب الفسيولوجية والاقتصادية — بآلية بوستبيوتيك آمنة تُلغي المقاومة والمتبقيات والإخلال الميكروبي والقيود التشريعية.</p>
+  </section>
+
+  <div class="sec-head">
+    <div class="kick">اضغط للتبديل</div>
+    <h2>ماذا تحصل عليه… وماذا تتجنّب</h2>
+  </div>
+  <div class="tabs">
+    <div class="tabbar">
+      <button class="tab active" data-tab="keep">✓ المكاسب المحفوظة</button>
+      <button class="tab" data-tab="risk">✕ المخاطر المُزالة</button>
+    </div>
+  </div>
+
+  <div class="tab-panel active" data-panel="keep">
+    <div class="keep-grid">
+      <div class="kcard"><div class="ic">🧬</div><h3>كفاءة هضم وامتصاص أعلى</h3>
+        <ul><li>جدار معوي أكثر صحّة وامتصاص أسرع للعناصر الغذائية</li><li>يعيد بناء زغابات الأمعاء بعد عدوى الكلوستريديا</li><li>يوازن الفلورا ويقلّل المنافسة على الطاقة والغذاء</li></ul>
+      </div>
+      <div class="kcard"><div class="ic">🛡️</div><h3>سيطرة على العدوى دون السريرية</h3>
+        <ul><li>كبح <span class="lat">C. perfringens</span> قبل ظهور الأعراض</li><li>وقاية من الالتهاب المعوي النخري (Necrotic Enteritis)</li><li>تقليل السموم البكتيرية والأمونيا وتخفيف العبء على الكبد</li></ul>
+      </div>
+      <div class="kcard"><div class="ic">📈</div><h3>مردود اقتصادي مباشر</h3>
+        <ul><li>تحسين معامل التحويل الغذائي (FCR) وخفض تكلفة العلف</li><li>تجانس أوزان القطيع وتسهيل التسويق للمسالخ</li><li>خفض معدلات النفوق طوال دورة التربية</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" data-panel="risk">
+    <div class="risk-grid">
+      <div class="rcard"><div class="rhead"><div class="rn">01</div><div class="rtitle">المقاومة البكتيرية <span class="lat">(AMR)</span></div></div>
+        <div class="rold"><s>سلالات مقاومة تتكوّن مع الجرعات تحت العلاجية وتنتقل للإنسان عبر السلسلة الغذائية</s></div>
+        <div class="rnew"><b>بكتيريوسينات طبيعية</b> تهدم جدار المُمرِضات دون ضغطٍ انتقائيّ يُنشئ مقاومة.</div></div>
+      <div class="rcard"><div class="rhead"><div class="rn">02</div><div class="rtitle">الإخلال الميكروبي <span class="lat">(Dysbiosis)</span></div></div>
+        <div class="rold"><s>مضاد واسع المجال يقضي على الفلورا النافعة ويضعف المناعة الموضعية</s></div>
+        <div class="rnew"><b>يوازن الفلورا</b> ويعيد بناء الزغابات بدل تدميرها، فيغلق باب العدوى الانتهازية.</div></div>
+      <div class="rcard"><div class="rhead"><div class="rn">03</div><div class="rtitle">متبقيات الأدوية <span class="lat">(Residues)</span></div></div>
+        <div class="rold"><s>بقايا في اللحم والكبد + فترات سحب صارمة وخطر رفض القطعان في المسالخ</s></div>
+        <div class="rnew"><b>صفر متبقيات · صفر فترة سحب</b> — يُستخدم بأمان حتى يوم الذبح.</div></div>
+      <div class="rcard"><div class="rhead"><div class="rn">04</div><div class="rtitle">القيود التشريعية <span class="lat">(SFDA)</span></div></div>
+        <div class="rold"><s>حظر/تقييد رقابي لمحفّزات النمو وعوائق أمام الأسواق الحديثة</s></div>
+        <div class="rnew"><b>متوافق مع التوجّه التنظيمي</b> ويفتح أسواق «خالٍ من المضادات» <span style="direction:ltr;display:inline-block">(Antibiotic-Free)</span>.</div></div>
+    </div>
+  </div>
+
+  <section class="how"><div class="spark">🧫</div>
+    <h3>كيف يحقّق المكسب بلا مخاطرة؟</h3>
+    <p>مستوحى من شرارة اكتشاف <b>البنسلين</b> — Clostide-W بوستبيوتيك يُنتَج من بكتيريا <b>غير مُمرِضة</b> (<span class="lat">Bacillus licheniformis</span>) تحارب المُمرِضة. يهدم جدار خلايا <span class="lat">C. perfringens · Salmonella · E. coli</span> ويُطلق محتواها، بينما تُعزّز إنزيماته ومغذّياته الهضم والمناعة.</p>
+    <div class="chips"><span class="chip">بوستبيوتيك لا بروبيوتيك</span><span class="chip">أقوى بعشرين مرة</span><span class="chip">فترة سحب صفرية</span></div>
+  </section>
+
+  <div class="sec-head"><div class="kick">اعرف أكثر</div><h2>الأسئلة الشائعة</h2></div>
+  <section class="faq">
+    <div class="acc-item"><button class="acc-q">ما هو Clostide-W؟ <span class="plus">+</span></button><div class="acc-a"><div class="inner">مضاد بكتيري واعد للدواجن، وهو <span class="lat">postbiotic</span> (وليس بروبيوتيك) يُنتَج من بكتيريا <span class="lat">Bacillus licheniformis</span> غير المُمرِضة، ويحمل بكتيريوسينات وبروتينات مضادة وإنزيمات هضمية ومغذّيات.</div></div></div>
+    <div class="acc-item"><button class="acc-q">كيف يعمل ضد البكتيريا؟ <span class="plus">+</span></button><div class="acc-a"><div class="inner">يعمل عبر هدم جدار الخلية للبكتيريا المُمرِضة مثل <span class="lat">C. perfringens · Salmonella · E. coli</span> وإطلاق محتواها، وقد ثبتت فعاليته أقوى بعشرين مرة من السلالات الشائعة.</div></div></div>
+    <div class="acc-item"><button class="acc-q">هل يترك متبقيات في اللحم أو البيض؟ <span class="plus">+</span></button><div class="acc-a"><div class="inner">لا. المنتج بفترة سحب صفرية ولا يترك أي متبقيات، ويمكن استخدامه بأمان حتى يوم الذبح — على عكس المضادات الحيوية التقليدية.</div></div></div>
+    <div class="acc-item"><button class="acc-q">متى يُستخدم في القطيع؟ <span class="plus">+</span></button><div class="acc-a"><div class="inner">في دجاج اللحم: خلال آخر 10 أيام من دورة التربية حتى الذبح، وفي فترة حظر المضادات. وفي الدجاج البيّاض: كجرعة منتظمة وقت الإنتاج لكبح المُمرِضات.</div></div></div>
+    <div class="acc-item"><button class="acc-q">ما فوائده الإنتاجية؟ <span class="plus">+</span></button><div class="acc-a"><div class="inner">تحسين معدّل استهلاك العلف ومعامل التحويل الغذائي في اللاحم والبيّاض والأمّهات، إعادة بناء زغابات الأمعاء، تعزيز المناعة الفطرية، وخفض معدلات النفوق.</div></div></div>
+  </section>
+
+  <section class="compare"><div class="ch"><div class="kick">فترة السحب قبل الذبح</div><h2>Clostide-W = صفر يوم انتظار</h2></div>
+    <div class="bars">
+      <div class="bar win"><div class="name">Clostide-W</div><div class="track"><div class="fill" style="--w:4%"></div></div><div class="val">0 يوم</div></div>
+      <div class="bar"><div class="name">Doxycycline</div><div class="track"><div class="fill" style="--w:100%"></div></div><div class="val">8 أيام</div></div>
+      <div class="bar"><div class="name">Neomycin</div><div class="track"><div class="fill" style="--w:88%"></div></div><div class="val">7 أيام</div></div>
+      <div class="bar"><div class="name">Tylosin</div><div class="track"><div class="fill" style="--w:88%"></div></div><div class="val">7 أيام</div></div>
+      <div class="bar"><div class="name">Amoxicillin</div><div class="track"><div class="fill" style="--w:75%"></div></div><div class="val">6 أيام</div></div>
+      <div class="bar"><div class="name">Erythromycin</div><div class="track"><div class="fill" style="--w:70%"></div></div><div class="val">5-6 أيام</div></div>
+    </div>
+  </section>
+
+  <section class="contact"><div class="clogo">🌱</div>
+    <div class="cname">أوركيد النماء</div>
+    <div class="ctag">Awrkid Alnmaa · حلول متقدّمة لصحة وإنتاجية الدواجن</div>
+    <div class="phone"><span class="pic">📞</span><span class="pn">٠٠٩٦٦ ٥٤ ٤٣٦ ٨٠٦٢</span></div>
+    <div class="cbtns"><a class="cbtn call" href="tel:+966544368062">اتصل الآن</a><a class="cbtn wa" href="https://wa.me/966544368062" target="_blank" rel="noopener">واتساب</a></div>
+  </section>
+
+  <footer><div class="fbrand">أوركيد النماء · Clostide-W</div><div class="fnote">مكاسب محفّزات النمو دون مخاطرها · صفر متبقيات · صفر مقاومة · فترة سحب صفرية</div></footer>
+</div>
+
+<!-- ================= English ================= -->
+<div class="wrap en" id="wrap-en" style="display:none">
+  <div class="topbar">
+    <div class="brand">
+      <span class="mark">🛡️</span>
+      <span class="bt"><span class="p">Clostide-W</span><span class="s">by Awrkid Alnmaa</span></span>
+    </div>
+    <div class="nav">
+      <button class="lang" onclick="setLang('ar')">عربي</button>
+      <button class="navcta" onclick="goContact(this)">Contact us</button>
+    </div>
+  </div>
+
+  <section class="hero">
+    <span class="eyebrow"><span class="dot"></span> Market impact</span>
+    <h1><span>Clostide-W</span></h1>
+    <p class="sub">In the past, we relied on antibiotics as growth promoters and for early control of problems — until that was banned. <span class="hl">Now we have the same advantage, without the risks.</span></p>
+    <div class="counter-label">Total <b>treated birds in Saudi Arabia</b> reached</div>
+    <div class="odometer" aria-label="Protected birds counter"></div>
+    <div class="grow"><span class="up">📈</span> and growing every day</div>
+  </section>
+
+  <section class="thesis">
+    <div class="k">The idea</div>
+    <h2>All the <span class="keep">gains</span> of growth promoters (AGPs)<br>without any of their <span class="cut">risks</span></h2>
+    <p>For decades, sub-therapeutic antibiotics were a cornerstone of poultry production. Clostide-W delivers the same physiological and economic gains — through a safe postbiotic mechanism that eliminates resistance, residues, microbial imbalance, and regulatory constraints.</p>
+  </section>
+
+  <div class="sec-head"><div class="kick">Tap to switch</div><h2>What you gain… and what you avoid</h2></div>
+  <div class="tabs"><div class="tabbar">
+    <button class="tab active" data-tab="keep">✓ Gains retained</button>
+    <button class="tab" data-tab="risk">✕ Risks removed</button>
+  </div></div>
+
+  <div class="tab-panel active" data-panel="keep">
+    <div class="keep-grid">
+      <div class="kcard"><div class="ic">🧬</div><h3>Higher digestion &amp; absorption</h3>
+        <ul><li>A healthier gut wall and faster nutrient absorption</li><li>Rebuilds intestinal villi after clostridial infection</li><li>Balances the flora and cuts competition for energy and feed</li></ul></div>
+      <div class="kcard"><div class="ic">🛡️</div><h3>Control of sub-clinical infection</h3>
+        <ul><li>Suppresses <span class="lat">C. perfringens</span> before symptoms appear</li><li>Prevents Necrotic Enteritis</li><li>Reduces bacterial toxins and ammonia, easing the liver load</li></ul></div>
+      <div class="kcard"><div class="ic">📈</div><h3>Direct economic return</h3>
+        <ul><li>Improves FCR and lowers feed cost</li><li>Uniform flock weights, easier processing</li><li>Lowers mortality across the whole cycle</li></ul></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" data-panel="risk">
+    <div class="risk-grid">
+      <div class="rcard"><div class="rhead"><div class="rn">01</div><div class="rtitle">Antimicrobial Resistance <span class="lat">(AMR)</span></div></div>
+        <div class="rold"><s>Resistant strains form under sub-therapeutic doses and pass to humans via the food chain</s></div>
+        <div class="rnew"><b>Natural bacteriocins</b> break down pathogens with no selective pressure that breeds resistance.</div></div>
+      <div class="rcard"><div class="rhead"><div class="rn">02</div><div class="rtitle">Microbial imbalance <span class="lat">(Dysbiosis)</span></div></div>
+        <div class="rold"><s>Broad-spectrum antibiotics wipe out beneficial flora and weaken local immunity</s></div>
+        <div class="rnew"><b>Balances the flora</b> and rebuilds villi instead of destroying them, closing the door on opportunistic infection.</div></div>
+      <div class="rcard"><div class="rhead"><div class="rn">03</div><div class="rtitle">Drug residues <span class="lat">(Residues)</span></div></div>
+        <div class="rold"><s>Residues in meat and liver + strict withdrawal periods and the risk of rejected flocks</s></div>
+        <div class="rnew"><b>Zero residues · Zero withdrawal</b> — used safely right up to slaughter day.</div></div>
+      <div class="rcard"><div class="rhead"><div class="rn">04</div><div class="rtitle">Regulatory constraints <span class="lat">(SFDA)</span></div></div>
+        <div class="rold"><s>Regulatory ban/restriction on growth promoters and barriers to modern markets</s></div>
+        <div class="rnew"><b>Aligned with the regulatory direction</b> and opens Antibiotic-Free markets.</div></div>
+    </div>
+  </div>
+
+  <section class="how"><div class="spark">🧫</div>
+    <h3>How does it deliver the gain without the risk?</h3>
+    <p>Inspired by the very spark of penicillin's discovery — Clostide-W is a postbiotic produced from a <b>non-pathogenic</b> bacterium (<span class="lat">Bacillus licheniformis</span>) that fights the pathogens. It breaks down the cell walls of <span class="lat">C. perfringens · Salmonella · E. coli</span> and releases their contents, while its enzymes and nutrients boost digestion and immunity.</p>
+    <div class="chips"><span class="chip">Postbiotic, not probiotic</span><span class="chip">20× more effective</span><span class="chip">Zero withdrawal</span></div>
+  </section>
+
+  <div class="sec-head"><div class="kick">Learn more</div><h2>Frequently asked questions</h2></div>
+  <section class="faq">
+    <div class="acc-item"><button class="acc-q">What is Clostide-W? <span class="plus">+</span></button><div class="acc-a"><div class="inner">A promising antibacterial for poultry — a <span class="lat">postbiotic</span> (not a probiotic) produced from the non-pathogenic bacterium <span class="lat">Bacillus licheniformis</span>, carrying bacteriocins, antibacterial proteins, digestive enzymes and nutrients.</div></div></div>
+    <div class="acc-item"><button class="acc-q">How does it work against bacteria? <span class="plus">+</span></button><div class="acc-a"><div class="inner">It breaks down the cell wall of pathogens such as <span class="lat">C. perfringens · Salmonella · E. coli</span> and releases their contents; it has proven up to twenty times more effective than common strains.</div></div></div>
+    <div class="acc-item"><button class="acc-q">Does it leave residues in meat or eggs? <span class="plus">+</span></button><div class="acc-a"><div class="inner">No. The product has a zero withdrawal period and leaves no residues, and can be used safely right up to slaughter day — unlike conventional antibiotics.</div></div></div>
+    <div class="acc-item"><button class="acc-q">When is it used in the flock? <span class="plus">+</span></button><div class="acc-a"><div class="inner">In broilers: during the last 10 days of the rearing cycle up to slaughter, and within the antibiotic-ban window. In layers: as a regular dose at the time of production to suppress pathogens.</div></div></div>
+    <div class="acc-item"><button class="acc-q">What are its production benefits? <span class="plus">+</span></button><div class="acc-a"><div class="inner">Improved feed intake and FCR in broilers, layers and breeders, rebuilding of intestinal villi, stronger innate immunity, and lower mortality.</div></div></div>
+  </section>
+
+  <section class="compare"><div class="ch"><div class="kick">Withdrawal period before slaughter</div><h2>Clostide-W = zero days of waiting</h2></div>
+    <div class="bars">
+      <div class="bar win"><div class="name">Clostide-W</div><div class="track"><div class="fill" style="--w:4%"></div></div><div class="val">0 days</div></div>
+      <div class="bar"><div class="name">Doxycycline</div><div class="track"><div class="fill" style="--w:100%"></div></div><div class="val">8 days</div></div>
+      <div class="bar"><div class="name">Neomycin</div><div class="track"><div class="fill" style="--w:88%"></div></div><div class="val">7 days</div></div>
+      <div class="bar"><div class="name">Tylosin</div><div class="track"><div class="fill" style="--w:88%"></div></div><div class="val">7 days</div></div>
+      <div class="bar"><div class="name">Amoxicillin</div><div class="track"><div class="fill" style="--w:75%"></div></div><div class="val">6 days</div></div>
+      <div class="bar"><div class="name">Erythromycin</div><div class="track"><div class="fill" style="--w:70%"></div></div><div class="val">5–6 days</div></div>
+    </div>
+  </section>
+
+  <section class="contact"><div class="clogo">🌱</div>
+    <div class="cname">Awrkid Alnmaa</div>
+    <div class="ctag">أوركيد النماء · Advanced solutions for poultry health &amp; productivity</div>
+    <div class="phone"><span class="pic">📞</span><span class="pn">00966 54 436 8062</span></div>
+    <div class="cbtns"><a class="cbtn call" href="tel:+966544368062">Call now</a><a class="cbtn wa" href="https://wa.me/966544368062" target="_blank" rel="noopener">WhatsApp</a></div>
+  </section>
+
+  <footer><div class="fbrand">Awrkid Alnmaa · Clostide-W</div><div class="fnote">The gains of growth promoters without their risks · Zero residues · Zero resistance · Zero withdrawal</div></footer>
+</div>
+
+<script>
+  const BASE=120000000, PER_DAY=45000, ANCHOR=Date.UTC(2026,6,6);
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function targetNow(){const d=Math.max(0,Math.floor((Date.now()-ANCHOR)/86400000));return BASE+d*PER_DAY;}
+
+  function buildCounter(root){
+    const odo=root.querySelector('.odometer');if(!odo)return;
+    const T=targetNow();const s=T.toLocaleString('en-US');
+    odo.innerHTML='';const cells=[];
+    for(const ch of s){
+      if(ch===','){const sp=document.createElement('div');sp.className='sep';sp.textContent=',';odo.appendChild(sp);}
+      else{const c=document.createElement('div');c.className='cell';const n=document.createElement('div');n.className='num';n.textContent='0';c.appendChild(n);odo.appendChild(c);cells.push(n);}
+    }
+    odo._cells=cells;odo._len=s.replace(/,/g,'').length;odo._target=T;
+  }
+  function animateCounter(root){
+    const odo=root.querySelector('.odometer');if(!odo||!odo._cells)return;
+    const cells=odo._cells,dl=odo._len,T=odo._target;
+    const render=v=>{const str=String(Math.floor(v)).padStart(dl,'0');for(let i=0;i<cells.length;i++){if(cells[i].textContent!==str[i]){cells[i].textContent=str[i];const c=cells[i].parentElement;c.classList.remove('roll');void c.offsetWidth;c.classList.add('roll');}}};
+    if(reduce){render(T);return;}
+    let start=null;const ease=t=>t===1?1:1-Math.pow(2,-10*t);
+    function step(ts){if(!start)start=ts;const p=Math.min((ts-start)/2800,1);render(T*ease(p));if(p<1)requestAnimationFrame(step);else render(T);}
+    requestAnimationFrame(step);
+  }
+
+  function attachTabs(root){
+    root.querySelectorAll('.tab').forEach(t=>{t.addEventListener('click',()=>{
+      root.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+      root.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      root.querySelector('.tab-panel[data-panel="'+t.dataset.tab+'"]').classList.add('active');
+    });});
+  }
+  function attachAccordion(root){
+    root.querySelectorAll('.acc-q').forEach(q=>{q.addEventListener('click',()=>{
+      const item=q.parentElement,a=q.nextElementSibling,open=item.classList.contains('open');
+      root.querySelectorAll('.acc-item').forEach(it=>{it.classList.remove('open');it.querySelector('.acc-a').style.maxHeight=null;});
+      if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+    });});
+  }
+  function attachBars(root){
+    const bars=root.querySelector('.bars');if(!bars)return;
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.fill').forEach(f=>f.style.width=getComputedStyle(f).getPropertyValue('--w'));io.unobserve(e.target);}});},{threshold:.3});
+    io.observe(bars);
+  }
+
+  const arRoot=document.getElementById('wrap-ar');
+  const enRoot=document.getElementById('wrap-en');
+
+  function goContact(btn){btn.closest('.wrap').querySelector('.contact').scrollIntoView({behavior:'smooth'});}
+
+  function setLang(l){
+    const ar=l==='ar';
+    document.documentElement.lang=ar?'ar':'en';
+    document.documentElement.dir=ar?'rtl':'ltr';
+    arRoot.style.display=ar?'block':'none';
+    enRoot.style.display=ar?'none':'block';
+    const root=ar?arRoot:enRoot;
+    buildCounter(root);animateCounter(root);
+    window.scrollTo({top:0});
+  }
+
+  // تهيئة العناصر التفاعلية للنسختين
+  [arRoot,enRoot].forEach(r=>{buildCounter(r);attachTabs(r);attachAccordion(r);attachBars(r);});
+
+  // فقاعات الخلفية
+  const amb=document.getElementById('ambient');
+  if(!reduce){for(let i=0;i<14;i++){const b=document.createElement('div');b.className='bub';const sz=8+Math.random()*26;b.style.width=sz+'px';b.style.height=sz+'px';b.style.left=Math.random()*100+'%';b.style.animationDuration=(11+Math.random()*12)+'s';b.style.animationDelay=(-Math.random()*16)+'s';amb.appendChild(b);}}
+
+  // البدء بالعربية
+  setLang('ar');
+</script>
+</body>
+</html>
