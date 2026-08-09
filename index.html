@@ -1,402 +1,501 @@
-<!DOCTYPE html>
-<html lang="ar" dir="ltr">
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AWRKID ALNMA — Product Brochure</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تقرير علمي: البيوفيلم في مزارع الدواجن</title>
+<meta name="description" content="تقرير علمي عن البيوفيلم في أنظمة مياه الدواجن ومسارات العدوى والميكروبات المرتبطة به.">
 <style>
-  :root{
-    --ink:#12332F;
-    --green:#1F7A5C;
-    --green-soft:#EAF3EE;
-    --amber:#DD9B24;
-    --amber-soft:#FBF1DA;
-    --crimson:#BE3B2D;
-    --paper:#FCFCF9;
-    --line:#D7DED8;
-    --muted:#5E6D66;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{background:#E7EBE6;}
-  body{
-    font-family:"IBM Plex Sans","IBM Plex Sans Arabic",sans-serif;
-    color:var(--ink);
-    -webkit-font-smoothing:antialiased;
-  }
-  .arabic{font-family:"IBM Plex Sans Arabic",sans-serif;direction:rtl;unicode-bidi:isolate;}
+:root {
+  --ink:#17232b; --muted:#5f6f78; --line:#dce5e8; --paper:#fff;
+  --bg:#f2f6f7; --accent:#15836d; --accent2:#287b9c; --warm:#9a6a2f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Arabic","Geeza Pro","Noto Sans Arabic",Arial,sans-serif;line-height:1.9}
+.container{max-width:1120px;margin:auto;padding:28px 18px 70px}
+.hero{background:linear-gradient(135deg,#0d5f50,#287b9c);color:white;border-radius:26px;padding:42px 34px;box-shadow:0 18px 50px rgba(20,55,65,.16);margin-bottom:22px}
+.hero h1{margin:0 0 10px;font-size:clamp(28px,4vw,46px);line-height:1.25}
+.hero p{margin:6px 0;opacity:.94;font-size:17px}
+.nav{position:sticky;top:10px;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:16px;padding:10px 14px;margin-bottom:22px;box-shadow:0 8px 25px rgba(0,0,0,.06)}
+.nav a{color:var(--accent);text-decoration:none;margin-left:16px;font-weight:700;font-size:14px}
+.paper{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:34px;box-shadow:0 10px 35px rgba(20,50,60,.07)}
+h1,h2,h3,h4{color:var(--ink);scroll-margin-top:90px}
+h2{margin-top:2.2em;border-right:5px solid var(--accent);padding-right:12px}
+h3{margin-top:1.7em;color:var(--accent2)}
+h4{color:var(--warm)}
+p{margin:0 0 1em}
+ul,ol{padding-right:28px}
+blockquote{margin:20px 0;padding:15px 18px;border-right:5px solid var(--warm);background:#faf7f1;border-radius:12px;color:#51412f}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.table-wrap{overflow:auto;margin:18px 0}
+table{width:100%;border-collapse:collapse;min-width:650px;background:#fff}
+th,td{border:1px solid var(--line);padding:10px 12px;vertical-align:top;text-align:right}
+th{background:#eef7f4;color:#135b4d}
+tr:nth-child(even) td{background:#fafcfc}
+.ref{color:var(--accent2);font-weight:700}
+a{color:#176d8b;overflow-wrap:anywhere}
+.visual-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}
+.visual-card{border:1px solid var(--line);border-radius:20px;background:#fbfdfd;padding:18px;overflow:hidden}
+.visual-card.wide{grid-column:1/-1}
+.visual-card h3{margin-top:0}
+.visual-card svg{width:100%;height:auto;display:block}
+.caption{font-size:13px;color:var(--muted);margin:8px 2px 0}
+.footer{margin-top:25px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:760px){
+  .paper{padding:22px 17px}
+  .hero{padding:30px 22px}
+  .visual-grid{grid-template-columns:1fr}
+  .visual-card.wide{grid-column:auto}
+  .nav a{display:inline-block;margin:2px 8px 2px 0}
+}
+@media print{
+  body{background:white}
+  .container{max-width:none;padding:0}
+  .nav{display:none}
+  .hero{box-shadow:none;break-inside:avoid}
+  .paper{box-shadow:none;border:0}
+  .visual-card{break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+}
 
-  /* ---------- Page frame ---------- */
-  .page{
-    width:210mm;
-    min-height:297mm;
-    margin:14px auto;
-    background:var(--paper);
-    padding:13mm 12mm 10mm;
-    position:relative;
-    box-shadow:0 6px 26px rgba(18,51,47,.14);
-    display:flex;
-    flex-direction:column;
-  }
-  .page::before{
-    content:"";
-    position:absolute;left:0;top:0;bottom:0;
-    width:6px;background:linear-gradient(var(--green),var(--amber));
-  }
-
-  /* ---------- Masthead ---------- */
-  .mast{display:flex;justify-content:space-between;align-items:flex-end;
-    border-bottom:2px solid var(--ink);padding-bottom:10px;}
-  .mast h1{
-    font-family:"Fraunces",serif;font-weight:600;font-size:33px;
-    letter-spacing:.4px;line-height:.95;color:var(--ink);}
-  .mast .tag{margin-top:6px;font-size:10.5px;font-weight:500;color:var(--green);
-    letter-spacing:.6px;text-transform:uppercase;}
-  .mast .tag-ar{font-size:12px;color:var(--muted);font-weight:500;margin-top:1px;}
-  .brands{display:flex;flex-direction:column;align-items:flex-end;gap:5px;}
-  .brands span{font-size:9px;font-weight:600;letter-spacing:.7px;color:var(--muted);
-    text-transform:uppercase;border:1px solid var(--line);border-radius:20px;
-    padding:3px 9px;background:#fff;}
-
-  /* ---------- Table ---------- */
-  table{width:100%;border-collapse:collapse;table-layout:fixed;margin-top:12px;}
-  col.c-no{width:4%;} col.c-img{width:9.5%;} col.c-prod{width:15%;}
-  col.c-def{width:26%;} col.c-comp{width:28%;} col.c-unit{width:7%;} col.c-man{width:10.5%;}
-
-  thead th{
-    background:var(--ink);color:#fff;font-weight:600;font-size:9px;
-    letter-spacing:.5px;text-transform:uppercase;padding:7px 6px;
-    text-align:left;vertical-align:middle;}
-  thead th .ar{display:block;font-family:"IBM Plex Sans Arabic";font-weight:500;
-    font-size:9.5px;opacity:.85;letter-spacing:0;margin-top:1px;}
-
-  tbody td{border-bottom:1px solid var(--line);padding:7px 6px;vertical-align:top;
-    font-size:9px;line-height:1.4;}
-  tbody tr:nth-child(even){background:var(--green-soft);}
-
-  .no{font-family:"Fraunces",serif;font-weight:600;font-size:13px;color:var(--green);}
-  .prod-en{font-weight:700;font-size:10.5px;color:var(--ink);line-height:1.15;}
-  .prod-ar{font-family:"IBM Plex Sans Arabic";direction:rtl;font-size:10px;
-    color:var(--muted);margin-top:2px;display:block;}
-
-  /* ---------- Empty image / QR placeholder ---------- */
-  .imgcell{padding:6px 5px;}
-  .imgbox{display:flex;flex-direction:column;align-items:center;justify-content:center;
-    height:52px;border:1.3px dashed #B4C0B8;border-radius:7px;background:#fff;
-    color:#9FABA3;text-align:center;gap:2px;}
-  .imgbox .ic{font-size:13px;line-height:1;opacity:.7;}
-  .imgbox .lbl{font-size:6.6px;font-weight:600;letter-spacing:.3px;line-height:1.2;}
-  .imgbox .lbl .arabic{font-size:7.2px;}
-
-  .def{font-size:10px;line-height:1.45;color:var(--ink);}
-  .def .arabic{display:block;margin-top:3px;font-size:10.5px;color:var(--green);
-    font-weight:500;line-height:1.5;}
-
-  .comp{font-size:8.4px;line-height:1.4;color:var(--muted);}
-
-  .unit{font-weight:600;font-size:9.5px;}
-  .unit .ar{display:block;font-family:"IBM Plex Sans Arabic";direction:rtl;
-    font-weight:400;color:var(--muted);margin-top:1px;}
-
-  .chip{display:inline-block;font-size:8px;font-weight:700;letter-spacing:.3px;
-    padding:3px 6px;border-radius:5px;line-height:1.2;text-align:center;}
-  .chip.neo{background:#F7E1DE;color:var(--crimson);}
-  .chip.vega{background:#DCEFE7;color:var(--green);}
-  .chip.natu{background:var(--amber-soft);color:#9A6B10;}
-  .chip small{display:block;font-weight:500;font-size:7px;opacity:.8;}
-
-  /* ---------- Legend / footer ---------- */
-  .legend{margin-top:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
-  .legend .box{border:1px solid var(--line);border-radius:8px;padding:9px 11px;
-    background:#fff;}
-  .legend h4{font-size:9px;text-transform:uppercase;letter-spacing:.6px;
-    color:var(--green);margin-bottom:4px;}
-  .legend p{font-size:8.8px;line-height:1.45;color:var(--muted);}
-  .legend .arabic{font-size:9.5px;color:var(--ink);}
-
-  .foot{margin-top:auto;padding-top:12px;border-top:2px solid var(--ink);
-    display:flex;justify-content:space-between;align-items:flex-end;}
-  .foot .co{font-family:"Fraunces",serif;font-weight:600;font-size:14px;color:var(--ink);}
-  .foot .co small{display:block;font-family:"IBM Plex Sans Arabic";direction:rtl;
-    font-size:10px;font-weight:400;color:var(--muted);margin-top:2px;}
-  .foot .contact{text-align:right;font-size:9px;color:var(--muted);line-height:1.6;}
-  .foot .contact b{color:var(--green);}
-  .pagenum{position:absolute;bottom:6mm;right:12mm;font-size:8.5px;color:var(--muted);
-    font-weight:500;}
-
-  .section-eyebrow{font-size:9px;font-weight:600;letter-spacing:1.2px;
-    text-transform:uppercase;color:var(--amber);margin-top:12px;}
-
-  @media print{
-    html,body{background:#fff;}
-    .page{margin:0;box-shadow:none;width:auto;min-height:auto;
-      page-break-after:always;padding:12mm 11mm;}
-    .page:last-child{page-break-after:auto;}
-  }
-  @page{size:A4;margin:0;}
+.lang-switcher{margin-top:22px}
+.lang-switcher button{border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.14);color:white;
+  padding:10px 17px;border-radius:999px;font-size:15px;font-weight:700;cursor:pointer;
+  transition:.2s;backdrop-filter:blur(8px)}
+.lang-switcher button:hover{background:rgba(255,255,255,.25);transform:translateY(-1px)}
 </style>
 </head>
 <body>
+<div class="container">
+<header class="hero">
+  <h1>تقرير علمي: البيوفيلم في مزارع الدواجن</h1>
+  <p>التكوين، الميكروبات المرتبطة، ومسارات العدوى</p>
+  <p>التاريخ: أغسطس 2026</p>
 
-<!-- ================= PAGE 1 ================= -->
-<section class="page">
-  <header class="mast">
-    <div>
-      <h1>AWRKID ALNMA<br>TRADING CO</h1>
-      <div class="tag">Veterinary &amp; Poultry Health Solutions</div>
-      <div class="tag-ar arabic">حلول صحة الدواجن والثروة الحيوانية</div>
-    </div>
-    <div class="brands">
-      <span>Neofarma · Italy</span>
-      <span>Turms International</span>
-      <span>Vegamax · Vega</span>
-      <span>Naturence</span>
-    </div>
-  </header>
+<div class="lang-switcher">
+  <button id="langBtn" type="button" onclick="toggleLanguage()" aria-label="Switch language">
+    English
+  </button>
+</div>
+</header>
 
-  <div class="section-eyebrow">Product Catalogue · 01–08 &nbsp;|&nbsp; دليل المنتجات</div>
+<nav class="nav" aria-label="التنقل">
+  <a href="#summary">الملخص</a>
+  <a href="#section2">التكوين</a>
+  <a href="#section3">الميكروبات</a>
+  <a href="#section5">APEC</a>
+  <a href="#section7">مسارات العدوى</a>
+  <a href="#references">المراجع</a>
+</nav>
 
-  <table>
-    <colgroup>
-      <col class="c-no"><col class="c-img"><col class="c-prod"><col class="c-def">
-      <col class="c-comp"><col class="c-unit"><col class="c-man">
-    </colgroup>
-    <thead>
-      <tr>
-        <th>No.<span class="ar arabic">م</span></th>
-        <th>Image / QR<span class="ar arabic">صورة / رمز</span></th>
-        <th>Product<span class="ar arabic">المنتج</span></th>
-        <th>What it does<span class="ar arabic">تعريف مبسّط</span></th>
-        <th>Composition<span class="ar arabic">التركيب</span></th>
-        <th>Unit<span class="ar arabic">الوحدة</span></th>
-        <th>Maker<span class="ar arabic">المُصنّع</span></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="no">01</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Clostide</span><span class="prod-ar">كلوستيد</span></td>
-        <td class="def">Probiotic &amp; postbiotic that balances gut flora and supports digestion and immunity.
-          <span class="arabic">بروبيوتيك وبوستبيوتيك يوازن ميكروبات الأمعاء ويدعم الهضم والمناعة.</span></td>
-        <td class="comp">Bacillus licheniformis 2×10⁹ CFU/g (postbiotic &amp; probiotic).</td>
-        <td class="unit">1 KG<span class="ar arabic">١ كجم</span></td>
-        <td><span class="chip vega">VEGAMAX</span></td>
-      </tr>
-      <tr>
-        <td class="no">02</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Betapolo</span><span class="prod-ar">بيتابولو</span></td>
-        <td class="def">Beta-glucan that strengthens immunity; used as a vaccine adjuvant.
-          <span class="arabic">بيتاجلوكان يعزّز المناعة ويُستخدم كمساعد للّقاحات.</span></td>
-        <td class="comp">1,3 Beta-glucan (life-vaccine adjuvant).</td>
-        <td class="unit">LT<span class="ar arabic">لتر</span></td>
-        <td><span class="chip natu">NATURENCE</span></td>
-      </tr>
-      <tr>
-        <td class="no">03</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Neovit Super Amino Extra</span><span class="prod-ar">نيوفيت سوبر أمينو اكسترا</span></td>
-        <td class="def">All-in-one tonic for growth, recovery and general vitality.
-          <span class="arabic">مقوٍّ شامل للنمو والتعافي والحيوية العامة.</span></td>
-        <td class="comp">Multi-vitamins, amino acids and minerals.</td>
-        <td class="unit">1 LT<span class="ar arabic">لتر</span></td>
-        <td><span class="chip neo">NEOFARMA<small>Italy</small></span></td>
-      </tr>
-      <tr>
-        <td class="no">04</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Neovit AD3E 100/20/20</span><span class="prod-ar">نيوفيت اد٣هـ ١٠٠/٢٠/٢٠</span></td>
-        <td class="def">Concentrated vitamins A, D3 &amp; E for bones, fertility and growth.
-          <span class="arabic">فيتامينات أ ود٣ وهـ مركّزة لصحة العظام والخصوبة والنمو.</span></td>
-        <td class="comp">Per 1 ml: Vitamin A 100,000 IU · Vitamin D3 20,000 IU · Vitamin E 20 mg.</td>
-        <td class="unit">LT<span class="ar arabic">لتر</span></td>
-        <td><span class="chip neo">NEOFARMA<small>Italy</small></span></td>
-      </tr>
-      <tr>
-        <td class="no">05</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Osteo Plus</span><span class="prod-ar">أوستيوبلس</span></td>
-        <td class="def">Calcium, phosphorus &amp; minerals for strong bones and shell quality.
-          <span class="arabic">كالسيوم وفوسفور ومعادن لعظام قوية وقشرة بيض متينة.</span></td>
-        <td class="comp">Phosphorus 100,000 mg · Calcium 40,000 mg · Manganese 5,000 · Iron 4,000 · Zinc 4,000 · Copper 600 · Magnesium 1,200 · Sodium 8,000 mg.</td>
-        <td class="unit">LT<span class="ar arabic">لتر</span></td>
-        <td><span class="chip neo">NEOFARMA<small>Italy</small></span></td>
-      </tr>
-      <tr>
-        <td class="no">06</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Neovit E+SE Liquid</span><span class="prod-ar">نيوفيت هـ + سيلينيوم سائل</span></td>
-        <td class="def">Vitamin E with selenium — antioxidant support for fertility and immunity.
-          <span class="arabic">فيتامين هـ مع السيلينيوم كمضاد أكسدة يدعم الخصوبة والمناعة.</span></td>
-        <td class="comp">Per 1 ml: Vitamin E 200 mg · Selenium.</td>
-        <td class="unit">LT<span class="ar arabic">لتر</span></td>
-        <td><span class="chip neo">NEOFARMA<small>Italy</small></span></td>
-      </tr>
-      <tr>
-        <td class="no">07</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Egg Plus</span><span class="prod-ar">ايج بلس سائل</span></td>
-        <td class="def">Boosts egg production and shell strength in layers.
-          <span class="arabic">يحسّن إنتاج البيض وقوة القشرة في الدجاج البيّاض.</span></td>
-        <td class="comp">Calcium gluconate 35,000 mg · Phosphorus 15,000 mg · Magnesium (as chloride) 2,000 mg.</td>
-        <td class="unit">LT<span class="ar arabic">لتر</span></td>
-        <td><span class="chip neo">NEOFARMA<small>Italy</small></span></td>
-      </tr>
-      <tr>
-        <td class="no">08</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Super Acid</span><span class="prod-ar">سوبر أسيد سائل</span></td>
-        <td class="def">Organic-acid blend that acidifies drinking water and controls harmful bacteria.
-          <span class="arabic">خليط أحماض عضوية يحمّض ماء الشرب ويثبّط البكتيريا الضارّة.</span></td>
-        <td class="comp">Formic 30% · Lactic 10% · Propionic 8% · Acetic 7% · Citric 3%.</td>
-        <td class="unit">20 KG<span class="ar arabic">٢٠ كجم</span></td>
-        <td><span class="chip vega">VEGAMAX</span></td>
-      </tr>
-    </tbody>
-  </table>
+<main class="paper"><div id="arabicContent">
+<div id="summary"></div>
+<h1>تقرير علمي: البيوفيلم في مزارع الدواجن — التكوين، الميكروبات المرتبطة، ومسارات العدوى</h1>
+<p><strong>الموضوع:</strong> دور البيوفيلم في أنظمة مياه الدواجن وعلاقته بعدوى الإيشيريشيا كولاي والميكروبات الأخرى</p>
+<p><strong>التاريخ:</strong> أغسطس 2026</p>
+<hr>
+<h2>الملخص</h2>
+<p>يستعرض هذا التقرير آلية تكوّن البيوفيلم (الغشاء الحيوي) عبر مراحله الخمس، والميكروبات التي تستخدمه كحماية في خطوط مياه الدواجن، والمعايير البكتيرية المقبولة في ماء الشرب، والجرعات التجريبية المُعدية لأهم مسببات الأمراض. كما يُحلّل ما إذا كان البيوفيلم هو المصدر الأساسي للإيشيريشيا كولاي (APEC) في الدواجن، ودور السكريات والمغذيات الذائبة في الأدوية والفيتامينات كغذاء للبيوفيلم، وأخيراً مقارنة بين المسار المائي والمسارات الأخرى للعدوى في المزرعة. تُشير الأدلة إلى أن البيوفيلم خزان مستمر ومُضخّم للعدوى في أنظمة المياه، لكنه ليس المصدر الأساسي عالمياً للإيشيريشيا كولاي، إذ تتداخل مصادر متعددة تشمل الفلورا المعوية وتلوث البيض والغبار البرازي والماء والأعلاف.</p>
+<p><strong>الكلمات المفتاحية:</strong> البيوفيلم، الإيشيريشيا كولاي الممرضة للدواجن (APEC)، الكوليباكيلوز، خطوط مياه الدواجن، السكريات، مسارات العدوى.</p>
+<hr>
+<h2>1. مقدمة</h2>
+<p>يُعد البيوفيلم (Biofilm) أحد التحديات الصحية الرئيسية في مزارع الدواجن الحديثة، خاصة في أنظمة الشرب المغلقة (Nipple Drinker Systems). فالبكتيريا داخل البيوفيلم أكثر مقاومة للمطهرات والمضادات الحيوية بنحو 1000 ضعف مقارنة بالبكتيريا الحرة <span class="ref">[1]</span>. يؤثر البيوفيلم على فعالية الأدوية واللقاحات المُقدَّمة عبر ماء الشرب، ويعمل كخزان مستدام للميكروبات الممرضة. يهدف هذا التقرير إلى تقديم تحليل علمي شامل لتكوّن البيوفيلم، والميكروبات المرتبطة به، ودوره في عدوى الدواجن، مع التركيز على الإيشيريشيا كولاي الممرضة للدواجن (APEC).</p>
+<hr>
 
-  <div class="pagenum">AWRKID ALNMA TRADING CO · Page 1 of 2</div>
-</section>
-
-<!-- ================= PAGE 2 ================= -->
-<section class="page">
-  <header class="mast">
-    <div>
-      <h1 style="font-size:26px;">AWRKID ALNMA TRADING CO</h1>
-      <div class="tag">Product Catalogue — continued</div>
-      <div class="tag-ar arabic">دليل المنتجات — تكملة</div>
-    </div>
-    <div class="brands">
-      <span>Neofarma · Italy</span>
-      <span>Vegamax · Vega</span>
-    </div>
-  </header>
-
-  <div class="section-eyebrow">Product Catalogue · 09–15 &nbsp;|&nbsp; دليل المنتجات</div>
-
-  <table>
-    <colgroup>
-      <col class="c-no"><col class="c-img"><col class="c-prod"><col class="c-def">
-      <col class="c-comp"><col class="c-unit"><col class="c-man">
-    </colgroup>
-    <thead>
-      <tr>
-        <th>No.<span class="ar arabic">م</span></th>
-        <th>Image / QR<span class="ar arabic">صورة / رمز</span></th>
-        <th>Product<span class="ar arabic">المنتج</span></th>
-        <th>What it does<span class="ar arabic">تعريف مبسّط</span></th>
-        <th>Composition<span class="ar arabic">التركيب</span></th>
-        <th>Unit<span class="ar arabic">الوحدة</span></th>
-        <th>Maker<span class="ar arabic">المُصنّع</span></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="no">09</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Salpivit</span><span class="prod-ar">سالبيفيت</span></td>
-        <td class="def">Vitamin &amp; trace-element supplement supporting gut health and condition.
-          <span class="arabic">مكمّل فيتامينات وعناصر نادرة يدعم صحة الأمعاء والحالة العامة.</span></td>
-        <td class="comp">Lurin · Copper (Cu) · Vitamins A, D3, E.</td>
-        <td class="unit">15 KG<span class="ar arabic">١٥ كجم</span></td>
-        <td><span class="chip vega">VEGAMAX</span></td>
-      </tr>
-      <tr>
-        <td class="no">10</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Neohepatox Liquid</span><span class="prod-ar">نيوهيباتوكس سائل</span></td>
-        <td class="def">Liver-support formula with carnitine, choline and artichoke.
-          <span class="arabic">تركيبة لدعم الكبد بالكارنيتين والكولين والخرشوف.</span></td>
-        <td class="comp">Vit B1 500 · B2 1,000 · B6 500 · B12 10 mg · L-Carnitine 25,000 · Choline chloride 75,000 · Betaine 50,000 · L-Lysine 20,000 · DL-Methionine 50,000 · Artichoke extract 25,000 mg.</td>
-        <td class="unit">LT<span class="ar arabic">لتر</span></td>
-        <td><span class="chip neo">NEOFARMA<small>Italy</small></span></td>
-      </tr>
-      <tr>
-        <td class="no">11</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Electrolytes Neofarma</span><span class="prod-ar">الكتروليتس نيوفارما</span></td>
-        <td class="def">Electrolytes &amp; vitamins to relieve heat, transport stress and dehydration.
-          <span class="arabic">إلكتروليتات وفيتامينات لتخفيف إجهاد الحرارة والنقل والجفاف.</span></td>
-        <td class="comp">Vit A 45,000 IU · Vit E 750 · Vit C 36,000 · Sodium chloride 372,000 · Potassium chloride 156,000 · Sodium benzoate 309,000 · Zinc 150 mg.</td>
-        <td class="unit">1 KG<span class="ar arabic">١ كجم</span></td>
-        <td><span class="chip neo">NEOFARMA<small>Italy</small></span></td>
-      </tr>
-      <tr>
-        <td class="no">12</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Neolac</span><span class="prod-ar">نيولاك</span></td>
-        <td class="def">Organic-acid water treatment for a healthier digestive tract.
-          <span class="arabic">معالِج مائي بالأحماض العضوية لجهاز هضمي أكثر صحّة.</span></td>
-        <td class="comp">Formic 18% · Lactic 13% · Propionic 21% · Sorbic 0.20%.</td>
-        <td class="unit">LT<span class="ar arabic">لتر</span></td>
-        <td><span class="chip neo">NEOFARMA<small>Italy</small></span></td>
-      </tr>
-      <tr>
-        <td class="no">13</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">ClearMax</span><span class="prod-ar">كليرماكس</span></td>
-        <td class="def">B-complex plus vitamin C to aid recovery from stress.
-          <span class="arabic">مركّب فيتامين ب مع فيتامين ج للتعافي من الإجهاد.</span></td>
-        <td class="comp">Vit B1 8,920 · B2 1,920 · B6 1,620 · Niacinamide 28,000 · Vit C 50,000 · Ammonium chloride 378,000 · Magnesium sulphate 212,000 · Sodium sulphate 212,000 mg.</td>
-        <td class="unit">1 KG<span class="ar arabic">١ كجم</span></td>
-        <td><span class="chip neo">NEOFARMA<small>Italy</small></span></td>
-      </tr>
-      <tr>
-        <td class="no">14</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Vitamix B+K+Choline</span><span class="prod-ar">فيتاميكس ب+ك+كولين</span></td>
-        <td class="def">B vitamins, K3 &amp; choline for metabolism, blood clotting and liver function.
-          <span class="arabic">فيتامينات ب وك٣ والكولين لدعم الأيض وتخثّر الدم ووظائف الكبد.</span></td>
-        <td class="comp">Per 1 KG: Vit B1 10,000 · B2 4,500 · B6 10,000 · B12 5 mg · Niacinamide 50,000 · Vit K3 10,000 · Choline 50,000 · Calcium pantothenate 50,000 · Folic acid 2,000 mg.</td>
-        <td class="unit">1 KG<span class="ar arabic">١ كجم</span></td>
-        <td><span class="chip neo">NEOFARMA<small>Italy</small></span></td>
-      </tr>
-      <tr>
-        <td class="no">15</td>
-        <td class="imgcell"><div class="imgbox"><span class="ic">▦</span><span class="lbl"><span class="arabic">صورة</span> / QR</span></div></td>
-        <td><span class="prod-en">Vecoga</span><span class="prod-ar">فيكوجا</span></td>
-        <td class="def">Potassium-monopersulfate disinfectant for farm biosecurity and water sanitation.
-          <span class="arabic">مطهّر بالبوتاسيوم مونوبرسلفات للأمن الحيوي للمزارع وتعقيم المياه.</span></td>
-        <td class="comp">Triple-salt complex 55% · Sodium chloride 1.5% · Sodium hexametaphosphate 12% · Sodium sulfate 8% · Amino-sulfonic acid 3.5% · Citric acid 5% · Sodium dodecyl sulfonate 10%.</td>
-        <td class="unit">5 KG<span class="ar arabic">٥ كجم</span></td>
-        <td><span class="chip vega">VEGAMAX</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="legend">
-    <div class="box">
-      <h4>Nutrition · التغذية</h4>
-      <p>Vitamins, amino acids &amp; minerals for growth, laying and recovery.
-        <span class="arabic">فيتامينات وأحماض أمينية ومعادن للنمو والإنتاج والتعافي.</span></p>
-    </div>
-    <div class="box">
-      <h4>Gut Health · صحة الأمعاء</h4>
-      <p>Probiotics and organic-acid water acidifiers for a balanced digestive tract.
-        <span class="arabic">بروبيوتيك ومحمّضات أحماض عضوية لتوازن الجهاز الهضمي.</span></p>
-    </div>
-    <div class="box">
-      <h4>Biosecurity · الأمن الحيوي</h4>
-      <p>Immune boosters and disinfectants that protect the flock and the farm.
-        <span class="arabic">معزّزات مناعة ومطهّرات تحمي القطيع والمزرعة.</span></p>
-    </div>
+<section class="visual-grid">
+  <div class="visual-card">
+    <h3>دورة تكوّن البيوفيلم — 5 مراحل</h3>
+    <svg viewBox="0 0 900 260" role="img" aria-label="مراحل تكوين البيوفيلم">
+      <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker>
+      </defs>
+      <g font-family="Arial, sans-serif" text-anchor="middle">
+        <circle cx="90" cy="125" r="58" fill="#eaf7f2" stroke="#15836d" stroke-width="3"/>
+        <text x="90" y="118" font-size="18">1</text><text x="90" y="143" font-size="16">الالتصاق الأولي</text>
+        <circle cx="270" cy="125" r="58" fill="#eaf7f2" stroke="#15836d" stroke-width="3"/>
+        <text x="270" y="118" font-size="18">2</text><text x="270" y="143" font-size="16">التثبيت</text>
+        <circle cx="450" cy="125" r="58" fill="#eaf7f2" stroke="#15836d" stroke-width="3"/>
+        <text x="450" y="118" font-size="18">3</text><text x="450" y="143" font-size="16">المستعمرات الدقيقة</text>
+        <circle cx="630" cy="125" r="58" fill="#eaf7f2" stroke="#15836d" stroke-width="3"/>
+        <text x="630" y="118" font-size="18">4</text><text x="630" y="143" font-size="16">النضج</text>
+        <circle cx="810" cy="125" r="58" fill="#eaf7f2" stroke="#15836d" stroke-width="3"/>
+        <text x="810" y="118" font-size="18">5</text><text x="810" y="143" font-size="16">التشتت</text>
+        <path d="M150 125 H210" stroke="#15836d" stroke-width="3" marker-end="url(#arrow)"/>
+        <path d="M330 125 H390" stroke="#15836d" stroke-width="3" marker-end="url(#arrow)"/>
+        <path d="M510 125 H570" stroke="#15836d" stroke-width="3" marker-end="url(#arrow)"/>
+        <path d="M690 125 H750" stroke="#15836d" stroke-width="3" marker-end="url(#arrow)"/>
+      </g>
+    </svg>
+    <p class="caption">رسم توضيحي مبني على المراحل الخمس الواردة في التقرير [2].</p>
   </div>
 
-  <footer class="foot">
-    <div class="co">AWRKID ALNMA TRADING CO
-      <small>شركة أوركيد النماء التجارية</small>
-    </div>
-    <div class="contact">
-      <b>Pricing &amp; orders on request</b> · الأسعار والطلبات عند الاستفسار<br>
-      Kingdom of Saudi Arabia · المملكة العربية السعودية
-    </div>
-  </footer>
+  <div class="visual-card">
+    <h3>خط المياه كخزان للميكروبات</h3>
+    <svg viewBox="0 0 900 300" role="img" aria-label="خط مياه وبيوفيلم">
+      <rect x="70" y="90" width="760" height="120" rx="60" fill="#eef7fb" stroke="#287b9c" stroke-width="5"/>
+      <path d="M95 150 H805" stroke="#75b9d3" stroke-width="32" opacity=".65"/>
+      <g fill="#b35c44">
+        <circle cx="210" cy="112" r="11"/><circle cx="245" cy="125" r="9"/><circle cx="285" cy="108" r="12"/>
+        <circle cx="340" cy="190" r="10"/><circle cx="390" cy="181" r="13"/><circle cx="430" cy="193" r="9"/>
+        <circle cx="540" cy="111" r="10"/><circle cx="585" cy="123" r="12"/><circle cx="635" cy="105" r="9"/>
+        <circle cx="690" cy="187" r="12"/><circle cx="735" cy="179" r="10"/>
+      </g>
+      <g fill="#15836d" font-family="Arial, sans-serif">
+        <text x="450" y="58" text-anchor="middle" font-size="22">الماء</text>
+        <text x="450" y="255" text-anchor="middle" font-size="20">طبقة بيوفيلم على السطح الداخلي</text>
+      </g>
+      <g font-family="Arial, sans-serif" font-size="16">
+        <text x="100" y="285">البكتيريا الحرة يمكن أن تدخل الخط</text>
+        <text x="565" y="285">ثم يُعاد بذرها من الخزان الحيوي</text>
+      </g>
+    </svg>
+    <p class="caption">مخطط مفاهيمي لتوضيح فكرة الخزان المستمر، وفق تحليل التقرير [3][4].</p>
+  </div>
 
-  <div class="pagenum">AWRKID ALNMA TRADING CO · Page 2 of 2</div>
+  <div class="visual-card wide">
+    <h3>مسارات العدوى في المزرعة</h3>
+    <svg viewBox="0 0 1000 360" role="img" aria-label="مسارات العدوى في مزرعة الدواجن">
+      <defs>
+        <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker>
+      </defs>
+      <g font-family="Arial, sans-serif" text-anchor="middle">
+        <circle cx="500" cy="180" r="72" fill="#f4efe6" stroke="#9a6a2f" stroke-width="4"/>
+        <text x="500" y="174" font-size="22">الطائر</text><text x="500" y="203" font-size="16">عدوى متعددة العوامل</text>
+
+        <g fill="#eef7fb" stroke="#287b9c" stroke-width="3">
+          <rect x="55" y="55" width="180" height="58" rx="16"/><rect x="410" y="35" width="180" height="58" rx="16"/>
+          <rect x="765" y="55" width="180" height="58" rx="16"/><rect x="55" y="250" width="180" height="58" rx="16"/>
+          <rect x="410" y="267" width="180" height="58" rx="16"/><rect x="765" y="250" width="180" height="58" rx="16"/>
+        </g>
+        <text x="145" y="91" font-size="18">الغبار والهواء</text>
+        <text x="500" y="71" font-size="18">البيض والمفرخ</text>
+        <text x="855" y="91" font-size="18">الماء والبيوفيلم</text>
+        <text x="145" y="286" font-size="18">العلف والفرشة</text>
+        <text x="500" y="303" font-size="18">المذرق / المسار الصاعد</text>
+        <text x="855" y="286" font-size="18">النواقل الميكانيكية</text>
+
+        <path d="M235 85 Q360 110 430 155" fill="none" stroke="#9a6a2f" stroke-width="3" marker-end="url(#arrow2)"/>
+        <path d="M500 93 V105" stroke="#9a6a2f" stroke-width="3" marker-end="url(#arrow2)"/>
+        <path d="M765 85 Q640 110 570 155" fill="none" stroke="#9a6a2f" stroke-width="3" marker-end="url(#arrow2)"/>
+        <path d="M235 279 Q360 250 430 205" fill="none" stroke="#9a6a2f" stroke-width="3" marker-end="url(#arrow2)"/>
+        <path d="M500 267 V255" stroke="#9a6a2f" stroke-width="3" marker-end="url(#arrow2)"/>
+        <path d="M765 279 Q640 250 570 205" fill="none" stroke="#9a6a2f" stroke-width="3" marker-end="url(#arrow2)"/>
+      </g>
+    </svg>
+    <p class="caption">رسم توضيحي تجميعي للمسارات المذكورة في القسم 7؛ لا يمثل ترتيباً زمنياً أو نسبة خطر ثابتة.</p>
+  </div>
+</section>
+<h2 id="section2">2. آلية تكوّن البيوفيلم</h2>
+<p>البيوفيلم بنية ثلاثية الأبعاد مكونة من كتلة ميكروبية (10% من البيوفيلم) مغمورة في مادة بوليمرية خارجية (EPS) وماء (90% من البيوفيلم)، تشكّل فيها السكريات المتعددة 50–90% من المكوّن العضوي <span class="ref">[2]</span>. يمر تكوّن البيوفيلم بخمس مراحل متتابعة:</p>
+<h3>2.1 الالتصاق الأولي (Initial Attachment)</h3>
+<p>تبدأ البكتيريا الحرة المسبحة (Planktonic) بالاقتراب من سطح صلب ملامس للماء. يحدث الالتصاق عبر أعضاء بكتيرية مثل الأسواط (Flagella) والشعيرات (Pili)، أو عبر قوى فيزيائية تشمل قوى فاندرفالس والكهروستاتيكية والكارهة للماء. يكون هذا الالتصاق أولياً وقابلاً للعكس بسهولة <span class="ref">[2]</span>.</p>
+<h3>2.2 التثبيت والالتصاق غير القابل للعكس (Irreversible Attachment)</h3>
+<p>تتراكم قوى الالتصاق فتتغلب على قوى التنافر، وتلتصق الخلايا بشكل دائم مكوّنة طبقة أحادية (Monolayer). تُفرز البكتيريا المادة البوليمرية الخارجية (EPS) التي تتفاعل مع سطح الأنبوب ومع مستقبلات محددة على الشعيرات النوعية (Fimbriae)، فيتحول الالتصاق من عابر إلى دائم <span class="ref">[2]</span>.</p>
+<h3>2.3 تكوّن المستعمرات الدقيقة (Microcolony Formation)</h3>
+<p>تنقسم البكتيريا وتتكاثر مكوّنة مستعمرات دقيقة. يُحفّز هذا التكاثر إشارات كيميائية داخلية بين الخلايا، وتنشأ بين المستعمرات علاقات تعاونية (Syntrophic Associations) لتبادل الركائز الغذائية وإزالة الفضلات الأيضية <span class="ref">[2]</span>.</p>
+<h3>2.4 النضج (Maturation)</h3>
+<p>تنمو المستعمرات وتزداد سماكة حتى تصل إلى نحو 100 ميكرومتر. تُفرز المادة البوليمرية بكثافة فتثبّت البنية وتحميها من المضادات الحيوية والمطهرات. تُنظَّم العملية بالإحساس بالكثافة (Quorum Sensing) عبر جزيئات الإشارة مثل N-acylated homoserine lactone (AHL). على سبيل المثال، يُنتج <em>Pseudomonas aeruginosa</em> السكريات Alginate و Pel و Psl لتثبيت البيوفيلم، كما تساهم البيئة الحمضية النووية (e-DNA) في تقوية البنية <span class="ref">[2]</span>.</p>
+<h3>2.5 التشتت والانتشار (Dispersion)</h3>
+<p>تنفصل خلايا بكتيرية من البيوفيلم الناضج لتستعمر أسطحاً جديدة، مما يُعيد دورة التكوّن في مواقع أخرى من خط المياه <span class="ref">[2]</span>.</p>
+<h3>2.6 العوامل البيئية المُهيّئة في مزارع الدواجن</h3>
+<p>يتكوّن البيوفيلم بسهولة في خطوط المياه ذات التدفق البطيء والحرارة الدافئة لبيت الدواجن وسوء جودة الماء. يمكن للبيوفيلم أن يعود خلال 2–3 أيام فقط بعد التنظيف <span class="ref">[3]</span>. كما تُسهّل العوامل التالية تكوّنه: وجود الماء، معدلات التدفق المنخفضة، حرارة العنبر الدافئة، وجود البكتيريا، وسوء جودة الماء <span class="ref">[3]</span>.</p>
+<hr>
+<h2 id="section3">3. الميكروبات التي تتخذ البيوفيلم حمايةً</h2>
+<p>يحمي البيوفيلم طيفاً واسعاً من الكائنات الحية، إذ يُغلف البكتيريا والفطريات والفيروسات والطفيليات الأولية والطحالب، وتكون البكتيريا داخل البيوفيلم أكثر مقاومة للمطهرات والمضادات الحيوية بنحو 1000 ضعف مقارنة بالبكتيريا الحرة <span class="ref">[1]</span>.</p>
+<h3>3.1 الميكروبات السائدة على أسطح خطوط المياه (دراسة ميدانية)</h3>
+<p>في دراسة بلجيكية شملت خمس مزارع لاحم (2015–2016)، أُخذت 85 عينة سطحية من الأجزاء الداخلية لأنظمة الشرب. كانت الأجناس السائدة هي <span class="ref">[4]</span>:</p>
+<ul><li><strong>Pseudomonas spp.</strong> (32.2% من العزلات، وُجدت في 4 مزارع) — ومنها <em>P. aeruginosa</em> و <em>P. hibiscicola</em></li><li><strong>Stenotrophomonas maltophilia</strong> (16.8%، وُجدت في جميع المزارع الخمس)</li><li><strong>Sphingomonas spp.</strong> و <strong>Chryseobacterium spp.</strong> و <strong>Acinetobacter spp.</strong> و <strong>Shewanella spp.</strong> و <strong>Microbacterium spp.</strong> و <strong>Pseudoxanthomonas spp.</strong></li></ul>
+<p>تراوحت الكثافة البكتيرية السطحية بين 1.87 و 9.00 log CFU/20 سم²، بمتوسط 6.03 log CFU/20 سم²، وعُثر على بروتينات على 58% من الأسطح المحللة كيميائياً، وكربوهيدرات على 14% منها <span class="ref">[4]</span>.</p>
+<h3>3.2 مسببات الأمراض المعروفة بقدرتها على تكوين البيوفيلم في الماء</h3>
+<p>تذكر الأدبيات أن الكائنات التالية قادرة على تكوين البيوفيلم في أنظمة المياه ورُصدت بشكل متكرر في مياه الشرب الخاصة بالدواجن <span class="ref">[4]</span>:</p>
+<div class="table-wrap"><table><thead><tr><th>الكائن</th><th>القدرة على تكوين البيوفيلم</th><th>الأهمية البيطرية</th></tr></thead><tbody><tr><td><em>Escherichia coli</em> (APEC)</td><td>مؤكدة <span class="ref">[5][6]</span></td><td>مسبب الكوليباكيلوز</td></tr><tr><td><em>Salmonella spp.</em></td><td>مؤكدة <span class="ref">[4][7]</span></td><td>مسبب السالمونيلا</td></tr><tr><td><em>Campylobacter spp.</em></td><td>مؤكدة <span class="ref">[4]</span></td><td>مسبب الكامبيلوباكتر</td></tr><tr><td><em>Pseudomonas spp.</em></td><td>مؤكدة <span class="ref">[4]</span></td><td>مسبب فرعي ومقاوم</td></tr><tr><td><em>Aeromonas spp.</em></td><td>مؤكدة <span class="ref">[4]</span></td><td>ممرض محتمل</td></tr><tr><td><em>Bacillus spp.</em></td><td>رُصد في البيوفيلم <span class="ref">[7]</span></td><td>سلالات نافعة وممرضة</td></tr><tr><td><em>Sphingomonas spp.</em></td><td>مؤكدة <span class="ref">[4]</span></td><td>شائع في أنظمة المياه</td></tr></tbody></table></div>
+<blockquote><strong>ملاحظة:</strong> البكتيريا السائدة على الأسطح (مثل <em>Pseudomonas</em> و <em>Stenotrophomonas</em>) قد لا تكون ممرضة للدواجن بشكل مباشر، لكن البيوفيلم يحمي مسببات الأمراض العابرة مثل <em>E. coli</em> و <em>Salmonella</em> عند دخولها خط الماء، فيصبح البيوفيلم خزاناً يُعيد بذرها باستمرار <span class="ref">[3][4]</span>.</blockquote>
+<hr>
+<h2>4. التركيز البكتيري وجرعات العدوى في الدواجن</h2>
+<p>لا يوجد حدّ عالمي واحد للتركيز المُمرض، لأن خطر المرض يعتمد على نوع الميكروب وضراوته وعمر الطائر وحالته المناعية والضغوط البيئية ومسار دخول العدوى <span class="ref">[5][8]</span>. وتُصنَّف القيم المرجعية إلى ثلاث فئات:</p>
+<h3>4.1 معايير جودة ماء الشرب للدواجن (مؤشرات صحية)</h3>
+<div class="table-wrap"><table><thead><tr><th>المؤشر</th><th>المقبول</th><th>غير المقبول</th><th>المصدر</th></tr></thead><tbody><tr><td>إجمالي البكتيريا (TPC)</td><td>&lt; 1000 CFU/ml</td><td>&gt; 1000 CFU/ml</td><td><span class="ref">[8][9]</span></td></tr><tr><td>إجمالي العصيات القولونية (Coliforms)</td><td>0–50 CFU/ml</td><td>&gt; 50 CFU/ml</td><td><span class="ref">[8][9]</span></td></tr><tr><td><em>E. coli</em> البرازي</td><td>0 CFU/ml</td><td>≥ 1 CFU/ml</td><td><span class="ref">[8][9]</span></td></tr><tr><td><em>Pseudomonas aeruginosa</em></td><td>0 CFU/ml</td><td>≥ 1 CFU/ml</td><td><span class="ref">[9]</span></td></tr></tbody></table></div>
+<blockquote>تجاوز 10,000 CFU/ml يستوجب إجراءات تنظيف صارمة وفورية <span class="ref">[9]</span>. كما رُصد أن الحديد عند 1 ppm فقط يعزّز نمو <em>E. coli</em> و <em>Salmonella</em> و <em>Pseudomonas</em> في ماء الشرب <span class="ref">[10]</span>.</blockquote>
+<h3>4.2 أحمال البيوفيلم على الأسطح (مؤشر تلوث)</h3>
+<p>في الدراسة البلجيكية المذكورة، اعتُبرت العينات السطحية التي تتجاوز ≥ 2.00 log CFU/20 سم² بعد التطهير دلالة على سطح حامل للبيوفيلم <span class="ref">[4]</span>. كما تراوحت الكثافة البكتيرية السطحية بين 1.87 و 9.00 log CFU/20 سم² <span class="ref">[4]</span>.</p>
+<h3>4.3 الجرعات التجريبية المُعدية (من دراسات التحدي)</h3>
+<div class="table-wrap"><table><thead><tr><th>الميكروب</th><th>الجرعة</th><th>المسار</th><th>المصدر</th></tr></thead><tbody><tr><td><em>E. coli</em> (APEC)</td><td>1×10⁷ إلى 2.5×10⁷ CFU/كتكوت</td><td>رش (تحدي الحاضنة)</td><td><span class="ref">[11]</span></td></tr><tr><td><em>Salmonella</em> (كتكوت عمر يوم)</td><td>10² CFU/طائر كافٍ للاستعمار</td><td>فموي</td><td><span class="ref">[12]</span></td></tr><tr><td><em>Salmonella</em> (طائر عمر 5 أسابيع)</td><td>10¹⁰ CFU/طائر</td><td>فموي</td><td><span class="ref">[12]</span></td></tr><tr><td><em>Salmonella</em> (تنفسي)</td><td>150 CFU فقط كافٍ</td><td>داخل الرغامى</td><td><span class="ref">[13]</span></td></tr><tr><td><em>Campylobacter jejuni</em></td><td>10–40 CFU كافٍ للاستعمار</td><td>فموي</td><td><span class="ref">[14][15]</span></td></tr></tbody></table></div>
+<blockquote><strong>ملاحظة تفسيرية:</strong> معايير جودة الماء (4.1) وأحمال الأسطح (4.2) هي مؤشرات على مستوى التلوث والخطر الصحي، وليست جرعات تُسبب المرض حتماً. أما قيم (4.3) فهي جرعات تحدي مخبرية تعتمد على عوامل متعددة. من الأخطر عملياً أن <strong>الجرعة المعدية التنفسية منخفضة جداً</strong> (150 CFU لـ <em>Salmonella</em>)، مما يجعل استنشاق الغبار الملوث خطراً كبيراً حتى عند تركيز منخفض <span class="ref">[13]</span>.</blockquote>
+<hr>
+<h2 id="section5">5. هل البيوفيلم هو المصدر الأساسي للإيشيريشيا كولاي في الدواجن؟</h2>
+<h3>5.1 الإجابة المُوجزة</h3>
+<p><strong>لا.</strong> البيوفيلم ليس المصدر الأساسي عالمياً، بل هو <strong>خزان مهم ومُضخّم للعدوى</strong> داخل أنظمة المياه. الإيشيريشيا كولاي الممرضة للدواجن (APEC) عدوى متعددة العوامل، ومصادرها الأساسية أوسع من البيوفيلم <span class="ref">[5][6][16][17]</span>.</p>
+<h3>5.2 المصادر والمسارات الأساسية لـ APEC</h3>
+<h4>5.2.1 الفلورا المعوية الطبيعية للطائر</h4>
+<p><em>E. coli</em> كائن معوي طبيعي في الدواجن، وبعض الحالات تنجم عن سلالات متعايشة تستغل ضعف المناعة أو وجود عوامل مهيّأة <span class="ref">[5]</span>.</p>
+<h4>5.2.2 تلوث بيض التفقيس (الانتقال العمودي)</h4>
+<p>يُعد تلوث بيض التفقيس "أحد الطرق الرئيسية لانتشار APEC في القطعان" <span class="ref">[16]</span>. تنتقل البكتيريا من الأمهات المريضات عبر قناة البيض (Oophoritis/Salpingitis) أو تلوث القشرة بالبراز، فتُسبب التهاب كيس الصفار (Yolk Sac Infection) وارتفاع نفوق الأسبوع الأول <span class="ref">[16][17]</span>.</p>
+<h4>5.2.3 الغبار والهواء الملوث بالبراز (المسار التنفسي)</h4>
+<p>استنشاق الغبار الملوث بالبراز "طريقة مؤكدة لانتقال APEC" <span class="ref">[16]</span>. يصل حمل <em>E. coli</em> في غبار العنبر إلى 10⁶ CFU/جرام، ويبقى حياً لفترات طويلة (حتى 35 سنة عند 4°م) <span class="ref">[16]</span>. يتضرر الجهاز التنفسي بفعل الأمونيا والغبار فتتاح الفرصة لـ APEC لإحداث التهاب الأكياس الهوائية <span class="ref">[18]</span>.</p>
+<h4>5.2.4 الماء والأعلاف الملوثة</h4>
+<p>يمكن أن تُدخل السلالات الممرضة عبر ماء البئر الملوث أو العلف <span class="ref">[16]</span>. يذكر دليل ميرك البيطري أن تطهير خطوط المياه وأنظمة المياه المغلقة من ممارسات الإدارة الأساسية لمنع الكوليباكيلوز <span class="ref">[5]</span>.</p>
+<h4>5.2.5 المفرخ والبيئة المحيطة</h4>
+<p>تنتقل العدوى أفقياً في المفرخ بين الكتاكيت عبر الريش والبراز والبيض المكسور، وكذلك عبر الأدوات الملوثة <span class="ref">[17]</span>. تُعد البيض المكسور أو الملوث بالبراز مصدراً قوياً لانتشار العدوى بين الكتاكيت في المفرخ <span class="ref">[16]</span>.</p>
+<h4>5.2.6 المسار الصاعد عبر المذرق</h4>
+<p>يُسبب التهاب قناة البيض والتهاب الصفاق (Salpingitis-Peritonitis Syndrome) في أمهات التسمين، ويؤدي إلى خسائر اقتصادية كبيرة <span class="ref">[17]</span>.</p>
+<h3>5.3 الخلاصة التحليلية</h3>
+<p>البيوفيلم في خطوط المياه <strong>خزان مستمر ومُضخّم</strong> يُعيد بذر <em>E. coli</em> وغيرها باستمرار، وقد يصبح <strong>المصدر التشغيلي الرئيسي في مزرعة بعينها</strong> إذا كانت خطوط المياه ملوثة بشدة. لكنه <strong>ليس المصدر الأساسي عالمياً</strong>؛ فالفلورا المعوية وتلوث البيض/المفرخ والغبار البرازي التنفسي عوامل أكثر جذرية في وبائية APEC <span class="ref">[5][16][17][18]</span>.</p>
+<hr>
+<h2>6. دور السكريات والمغذيات الذائبة في تغذية البيوفيلم</h2>
+<h3>6.1 الإجابة المُوجزة</h3>
+<p><strong>نعم.</strong> السكريات والمغذيات الذائبة في الأدوية والفيتامينات المُقدَّمة عبر ماء الشرب تُغذّي البيوفيلم في خطوط المياه <span class="ref">[10][1]</span>.</p>
+<h3>6.2 الأدلة العلمية</h3>
+<p>تذكر المصادر الصناعية والعلمية صراحة أن المربين يضيفون عبر ماء الشرب مواد <strong>تُغذّي البيوفيلم مباشرة</strong>، وتشمل <span class="ref">[10]</span>:</p>
+<ul><li>ماء السكر (Sugar Water)</li><li>الفيتامينات</li><li>الإلكتروليتات</li><li>مضادات الحيوية</li><li>خلطات الجيلاتين المنكّهة ومساحيق المشروبات</li><li>المثبتات (Stabilisers)</li></ul>
+<p>ويُنص على أن هذه الإضافات <strong>"مصدر غذاء للبيوفيلم"</strong>، وأن البيوفيلم يعود خلال 2–3 أيام فقط بعد إزالته في الأنظمة بطيئة التدفق الغنية بالمغذيات <span class="ref">[10]</span>.</p>
+<p>كما تؤكد مصادر أخرى أن بعض المعالجات ومكملات الفيتامينات والمعادن <strong>تحتوي على سكريات أو مغذيات أخرى تساهم في نمو البيوفيلم</strong>، وأن بعض الأحماض العضوية قد يكون لها أثر مماثل <span class="ref">[1]</span>.</p>
+<h3>6.3 تفاصيل دقيقة للممارسة الميدانية</h3>
+<ul><li><strong>السكريات والمغذيات</strong> (السكر المذاب، حاملات الفيتامينات، المنكّهات، المثبتات، بقايا العلف) تزيد الكربون العضوي المتاح فتُعزّز نمو البيوفيلم المختلط <span class="ref">[10][1]</span>.</li><li><strong>المضادات الحيوية نفسها ليست مغذياً بحد ذاتها</strong>، لكنها قد تُكبِت بعض البكتيريا وتُنتخب سلالات مقاومة داخل البيوفيلم، وقد تُحتجَز داخل المصفوفة وتتدهور بفعل إنزيمات مثل بيتا-لاكتاماز، فيقل تأثيرها العلاجي <span class="ref">[1]</span>.</li><li><strong>بقايا المواد العضوية</strong> المتبقية في خطوط المياه بعد استخدام المُغطس (Medicator) تُشكل مصدراً غذائياً إضافياً <span class="ref">[10]</span>.</li></ul>
+<h3>6.4 التوصية العملية</h3>
+<p>بعد كل دورة علاج أو فيتامين عبر الماء، يجب <strong>غسل الخطوط وتطهيرها</strong> لمنع تراكم البقايا العضوية التي تُغذّي البيوفيلم <span class="ref">[10][1]</span>.</p>
+<hr>
+<h2 id="section7">7. مقارنة المسارات: هل الماء هو المسار الأساسي للعدوى؟</h2>
+<h3>7.1 الإجابة المُوجزة</h3>
+<p>الماء مسار مهم لكنه <strong>ليس المسار الوحيد ولا الأكثر جذرية دائماً</strong> <span class="ref">[5][16][18]</span>. توجد عدة مسارات تعمل في المزرعة، وأهمها يختلف حسب نوع المرض وعمر الطائر.</p>
+<h3>7.2 المسارات الأساسية للعدوى في مزرعة الدواجن</h3>
+<h4>7.2.1 المسار التنفسي (استنشاق الغبار والهباء الملوث)</h4>
+<p>يُعد من أهم مسارات APEC و <em>Salmonella</em>. يصل <em>E. coli</em> في غبار العنبر إلى 10⁶ CFU/جرام <span class="ref">[16]</span>. الأمونيا والغبار يضرّان بالأهداب التنفسية فيتاحان للبكتيريا الاستعمار <span class="ref">[18]</span>. جرعة <em>Salmonella</em> التنفسية قد تكون 150 CFU فقط <span class="ref">[13]</span>. تراوح العد البكتيري في هواء أنظمة الإسكان بين 10,000 و 8,000,000 CFU/m³، مع وصول عدوى <em>E. coli</em> الداخلي إلى 1,000 CFU/m³ <span class="ref">[18]</span>.</p>
+<h4>7.2.2 المسار الفموي-البرازي (Fecal-Oral)</h4>
+<p>من أبرز المسارات، عبر تلوث الماء والعلف والفرشة بالبراز <span class="ref">[16]</span>. تُدرس عدوى <em>Salmonella</em> و <em>Campylobacter</em> أساساً عبر هذا المسار <span class="ref">[13][14]</span>.</p>
+<h4>7.2.3 مسار الماء الملوث (Water-borne)</h4>
+<p>يُعد مهماً خاصة عند تلوث خطوط المياه بالبيوفيلم، إذ يُعيد البيوفيلم بذر البكتيريا باستمرار. يذكر دليل ميرك أن تطهير خطوط المياه وأنظمة المياه المغلقة من ممارسات الإدارة الأساسية لمنع الكوليباكيلوز <span class="ref">[5]</span>. كما أن الحديد عند 1 ppm يعزّز نمو <em>E. coli</em> و <em>Salmonella</em> و <em>Pseudomonas</em> في الماء <span class="ref">[10]</span>.</p>
+<h4>7.2.4 الانتقال العمودي عبر البيض (Vertical Transmission)</h4>
+<p>من الأمهات إلى الكتاكيت عبر تلوث قشرة البيض أو إصابة قناة البيض، ويُسبب نفوق الأسبوع الأول في المفرخ <span class="ref">[17]</span>.</p>
+<h4>7.2.5 المسار الصاعد عبر المذرق</h4>
+<p>يُسبب التهاب قناة البيض والتهاب الصفاق في أمهات التسمين <span class="ref">[17]</span>.</p>
+<h4>7.2.6 السرّة وجروح الجلد</h4>
+<p>من أبواب الدخول المذكورة في دليل ميرك للكوليباكيلوز <span class="ref">[5]</span>.</p>
+<h4>7.2.7 النواقل الميكانيكية (Fomites) والقوارض والحشرات</h4>
+<p>الأدوات، الأشخاص، الفئران، الذباب، والخنافس تنقل العدوى بين العنابر <span class="ref">[5][16]</span>.</p>
+<h3>7.3 تحليل الأولوية النسبية للمسارات</h3>
+<div class="table-wrap"><table><thead><tr><th>المرض</th><th>المسار الأبرز</th><th>ملاحظات</th></tr></thead><tbody><tr><td>الكوليباكيلوز الجهازي (APEC)</td><td>التنفسي (غبار ملوث)</td><td>مركزي خاصة مع أمونيا وفيروسات تنفسية <span class="ref">[16][18]</span></td></tr><tr><td>الكتاكيت الصغيرة</td><td>تلوث البيض والمفرخ (عمودي)</td><td>المصدر الأبرز للنفوق المبكر <span class="ref">[17]</span></td></tr><tr><td><em>Salmonella</em></td><td>الفموي-البرازي</td><td>مع دور للماء الملوث والبيوفيلم <span class="ref">[13]</span></td></tr><tr><td><em>Campylobacter</em></td><td>الفموي-البرازي</td><td>جرعة معدية منخفضة جداً (10–40 CFU) <span class="ref">[14][15]</span></td></tr></tbody></table></div>
+<h3>7.4 الخلاصة</h3>
+<p>الماء الملوث بالبيوفيلم مسار مستمر وخطير لأنه يُلقّح الطيور يومياً، لكنه يعمل <strong>بالتنسيق</strong> مع المسارات الأخرى <span class="ref">[5][16]</span>. الإدارة الناجحة تتطلب نهجاً متكاملاً يشمل: تطهير خطوط المياه بين القطعان، ضبط التهوية والأمونيا والغبار، نظافة البيض والمفرخ، مكافحة القوارض والحشرات، وتطهير العنبر بين القطعان <span class="ref">[5][16][18]</span>.</p>
+<hr>
+<h2>8. الاستنتاجات والتوصيات</h2>
+<ol><li><strong>البيوفيلم بنية منظمة</strong> تمر بخمس مراحل (الالتصاق، التثبيت، تكوّن المستعمرات، النضج، التشتت)، وتتكون في خطوط مياه الدواجن بسهولة بسبب التدفق البطيء والحرارة الدافئة <span class="ref">[2][3]</span>.</li></ol>
+<ol><li><strong>البيوفيلم يحمي طيفاً واسعاً من الكائنات</strong>، بما فيها <em>E. coli</em> و <em>Salmonella</em> و <em>Campylobacter</em> و <em>Pseudomonas</em>، وتزيد مقاومتها للمطهرات 1000 ضعف <span class="ref">[1][4]</span>.</li></ol>
+<ol><li><strong>لا يوجد حدّ عالمي للتركيز المُمرض</strong>، لكن معايير جودة الماء توفر مؤشرات عملية: يجب ألا تتجاوز البكتيريا الكلية 1000 CFU/ml، ويجب أن يكون <em>E. coli</em> صفراً <span class="ref">[8][9]</span>.</li></ol>
+<ol><li><strong>البيوفيلم ليس المصدر الأساسي عالمياً لـ APEC</strong>، بل خزان مُضخّم ومستمر. المصادر الأساسية تشمل الفلورا المعوية وتلوث البيض والغبار البرازي التنفسي <span class="ref">[5][16][17]</span>.</li></ol>
+<ol><li><strong>السكريات والمغذيات الذائبة في الأدوية والفيتامينات تُغذّي البيوفيلم</strong> بشكل مباشر، ويجب غسل الخطوط بعد كل دورة علاجية <span class="ref">[10][1]</span>.</li></ol>
+<ol><li><strong>الماء مسار مهم لكنه ليس الوحيد</strong>؛ فالمسار التنفسي (استنشاق الغبار الملوث) يُعد مركزياً في الكوليباكيلوز الجهازي، والانتقال العمودي (تلوث البيض) هو الأبرز في الكتاكيت الصغيرة <span class="ref">[5][16][17][18]</span>.</li></ol>
+<h3>توصيات الإدارة المتكاملة</h3>
+<ul><li><strong>تطهير خطوط المياه</strong> بين القطعان باستخدام منظفات قلوية ومطهرات يودية <span class="ref">[1]</span>.</li><li><strong>غسل الخطوط بعد كل دورة علاج أو فيتامين</strong> لمنع تراكم البقايا العضوية <span class="ref">[10]</span>.</li><li><strong>الحفاظ على 3–5 ppm كلور حر</strong> عند نهاية الخط ودرجة حموضة 6.2–6.8 <span class="ref">[10]</span>.</li><li><strong>ضبط التهوية والأمونيا</strong> لحماية الجهاز التنفسي للطيور <span class="ref">[18]</span>.</li><li><strong>نظافة البيض والمفرخ</strong> لمنع الانتقال العمودي <span class="ref">[16][17]</span>.</li><li><strong>مكافحة القوارض والحشرات</strong> وتطهير العنبر بين القطعان <span class="ref">[5][16]</span>.</li></ul>
+<hr>
+<h2 id="references">المراجع</h2>
+<p><span class="ref">[1]</span> Huvepharma. Biofilms and drinking water treatment. Available from: <a href="https://www.huvepharma.com/news/article/biofilms-and-drinking-water-treatment/" target="_blank" rel="noopener">https://www.huvepharma.com/news/article/biofilms-and-drinking-water-treatment/</a></p>
+<p><span class="ref">[2]</span> Mishra M, Kumar S, Gupta A, et al. Microbial Biofilm: A Review on Formation, Infection, Antibiotic Resistance, Control Measures, and Innovative Treatment. Microorganisms. 2023. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10305407/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC10305407/</a></p>
+<p><span class="ref">[3]</span> University of Georgia Cooperative Extension. Biofilms in Poultry Drinkers. Poultry Tips; July 2006. Available from: <a href="https://poultry.caes.uga.edu/content/dam/caes-subsite/poultry/documents/archived-poultry-tips/biofilms-in-poultry-drinkers-jul-06.pdf" target="_blank" rel="noopener">https://poultry.caes.uga.edu/content/dam/caes-subsite/poultry/documents/archived-poultry-tips/biofilms-in-poultry-drinkers-jul-06.pdf</a></p>
+<p><span class="ref">[4]</span> Maes S, Vackier T, Nguyen Huu S, et al. Occurrence and characterisation of biofilms in drinking water systems of broiler houses. BMC Microbiology. 2019. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6466764/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC6466764/</a></p>
+<p><span class="ref">[5]</span> Merck Veterinary Manual. Colibacillosis in Poultry. Available from: <a href="https://www.merckvetmanual.com/poultry/colibacillosis/colibacillosis-in-poultry" target="_blank" rel="noopener">https://www.merckvetmanual.com/poultry/colibacillosis/colibacillosis-in-poultry</a></p>
+<p><span class="ref">[6]</span> Tivendale KA, et al. Avian pathogenic Escherichia coli: Epidemiology, virulence, and control. Frontiers in Veterinary Science. 2024. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8069529/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC8069529/</a></p>
+<p><span class="ref">[7]</span> University of Arkansas Agricultural Experiment Station. Poultry Water Biofilm Research Highlights. 2025. Available from: <a href="https://aaes.uada.edu/research-highlights/poultry-water-biofilm/" target="_blank" rel="noopener">https://aaes.uada.edu/research-highlights/poultry-water-biofilm/</a></p>
+<p><span class="ref">[8]</span> Mississippi State University Extension. Water Quality Critical to Broiler Performance. Publication P2754. Available from: <a href="https://extension.msstate.edu/publications/water-quality-critical-broiler-performance" target="_blank" rel="noopener">https://extension.msstate.edu/publications/water-quality-critical-broiler-performance</a></p>
+<p><span class="ref">[9]</span> University of Veterinary Medicine Vienna. Determination of the microbiological load of poultry drinking water. Available from: <a href="https://phaidra.vetmeduni.ac.at/api/object/o:1320/get" target="_blank" rel="noopener">https://phaidra.vetmeduni.ac.at/api/object/o:1320/get</a></p>
+<p><span class="ref">[10]</span> ThePoultrySite. Poultry Water Line Sanitation. Available from: <a href="https://www.thepoultrysite.com/articles/poultry-water-line-sanitation" target="_blank" rel="noopener">https://www.thepoultrysite.com/articles/poultry-water-line-sanitation</a></p>
+<p><span class="ref">[11]</span> Cox NA, et al. Research Note: Application of an Escherichia coli spray challenge model to assess horizontal transmission in broiler hatchers. Poultry Science. 2021. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7905460/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC7905460/</a></p>
+<p><span class="ref">[12]</span> Hinz KH, et al. Model for experimental efficacy testing of control measures against Salmonella infections in poultry. PubMed. 1995. Available from: <a href="https://pubmed.ncbi.nlm.nih.gov/8582255/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/8582255/</a></p>
+<p><span class="ref">[13]</span> Cummings RB, et al. Evaluation of the respiratory route as a viable portal of entry for Salmonella in poultry. PMC. 2014. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4990883/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC4990883/</a></p>
+<p><span class="ref">[14]</span> Sahin O, et al. Sources of Campylobacter Colonization in Broiler Chickens. PMC. 2000. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC169125/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC169125/</a></p>
+<p><span class="ref">[15]</span> Corcionivoschi N, et al. Campylobacter jejuni in Poultry: Pathogenesis and Control Strategies. PMC. 2022. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9697106/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC9697106/</a></p>
+<p><span class="ref">[16]</span> Nazir S, et al. Avian pathogenic Escherichia coli: Epidemiology, virulence, and pathogenesis. PMC. 2024. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11784041/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC11784041/</a></p>
+<p><span class="ref">[17]</span> Ahmed AM, et al. Avian Pathogenic Escherichia coli (APEC) in Broiler Breeders. PMC. 2023. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10674223/" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC10674223/</a></p>
+<p><span class="ref">[18]</span> Frontiers in Veterinary Science. Predisposition factors and control strategies of avian pathogenic Escherichia coli in laying hens. 2024. Available from: <a href="https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2024.1474549/full" target="_blank" rel="noopener">https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2024.1474549/full</a></p>
+<hr>
+<p><em>هذا التقرير مستند إلى مصادر علمية محكّمة وأدلة بيطرية موثوقة. يُنصح باستشارة طبيب بيطري ميداني لتطبيق التوصيات حسب ظروف كل مزرعة.</em></p>
+</div><div id="englishContent" hidden dir="ltr">
+<div id="summary"></div>
+<h1>Scientific Report: Biofilm in Poultry Farms — Formation, Associated Microbes, and Infection Pathways</h1>
+<p><strong>Topic:</strong> The role of biofilm in poultry water systems and its relationship to Escherichia coli and other microbial infections</p>
+<p><strong>Date:</strong> August 2026</p>
+
+<h2>Abstract</h2>
+<p>This report reviews biofilm formation through its five stages, the microorganisms that use biofilm as protection in poultry drinking-water lines, bacterial indicators used for drinking-water quality, and experimental infectious doses of important pathogens. It also analyzes whether biofilm is the primary source of avian pathogenic Escherichia coli (APEC), the role of sugars and dissolved nutrients from medications and vitamins as biofilm nutrients, and compares waterborne and other infection pathways on poultry farms. The evidence indicates that biofilm is a persistent and amplifying reservoir of infection in water systems, but it is not the primary global source of E. coli; multiple sources contribute, including intestinal flora, egg contamination, fecal dust, water, and feed.</p>
+
+<h2>1. Introduction</h2>
+<p>Biofilm is a major health challenge in modern poultry farms, particularly in closed nipple-drinker systems. Bacteria within biofilm are reported to be much more resistant to disinfectants and antibiotics than free-living bacteria [1]. Biofilm can affect the effectiveness of medications and vaccines delivered through drinking water and acts as a persistent microbial reservoir. This report presents a scientific analysis of biofilm formation, associated microorganisms, and its role in poultry infections, with emphasis on APEC.</p>
+
+<section class="visual-grid">
+  <div class="visual-card">
+    <h3>Biofilm Formation — 5 Stages</h3>
+    <svg viewBox="0 0 900 260" role="img" aria-label="Five stages of biofilm formation">
+      <defs><marker id="e1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker></defs>
+      <g font-family="Arial,sans-serif" text-anchor="middle">
+        <circle cx="90" cy="125" r="58" fill="#eaf7f2" stroke="#15836d" stroke-width="3"/><text x="90" y="118" font-size="18">1</text><text x="90" y="143" font-size="16">Initial attachment</text>
+        <circle cx="270" cy="125" r="58" fill="#eaf7f2" stroke="#15836d" stroke-width="3"/><text x="270" y="118" font-size="18">2</text><text x="270" y="143" font-size="16">Irreversible attachment</text>
+        <circle cx="450" cy="125" r="58" fill="#eaf7f2" stroke="#15836d" stroke-width="3"/><text x="450" y="118" font-size="18">3</text><text x="450" y="143" font-size="16">Microcolonies</text>
+        <circle cx="630" cy="125" r="58" fill="#eaf7f2" stroke="#15836d" stroke-width="3"/><text x="630" y="118" font-size="18">4</text><text x="630" y="143" font-size="16">Maturation</text>
+        <circle cx="810" cy="125" r="58" fill="#eaf7f2" stroke="#15836d" stroke-width="3"/><text x="810" y="118" font-size="18">5</text><text x="810" y="143" font-size="16">Dispersion</text>
+        <path d="M150 125 H210" stroke="#15836d" stroke-width="3" marker-end="url(#e1)"/><path d="M330 125 H390" stroke="#15836d" stroke-width="3" marker-end="url(#e1)"/><path d="M510 125 H570" stroke="#15836d" stroke-width="3" marker-end="url(#e1)"/><path d="M690 125 H750" stroke="#15836d" stroke-width="3" marker-end="url(#e1)"/>
+      </g>
+    </svg>
+    <p class="caption">Illustrative diagram based on the five stages described in the report [2].</p>
+  </div>
+  <div class="visual-card">
+    <h3>Water Line as a Microbial Reservoir</h3>
+    <svg viewBox="0 0 900 300" role="img" aria-label="Water line and biofilm">
+      <rect x="70" y="90" width="760" height="120" rx="60" fill="#eef7fb" stroke="#287b9c" stroke-width="5"/>
+      <path d="M95 150 H805" stroke="#75b9d3" stroke-width="32" opacity=".65"/>
+      <g fill="#b35c44"><circle cx="210" cy="112" r="11"/><circle cx="245" cy="125" r="9"/><circle cx="285" cy="108" r="12"/><circle cx="340" cy="190" r="10"/><circle cx="390" cy="181" r="13"/><circle cx="430" cy="193" r="9"/><circle cx="540" cy="111" r="10"/><circle cx="585" cy="123" r="12"/><circle cx="635" cy="105" r="9"/><circle cx="690" cy="187" r="12"/><circle cx="735" cy="179" r="10"/></g>
+      <text x="450" y="58" text-anchor="middle" font-size="22" fill="#15836d" font-family="Arial">Water</text>
+      <text x="450" y="255" text-anchor="middle" font-size="20" fill="#15836d" font-family="Arial">Biofilm layer on the inner surface</text>
+    </svg>
+    <p class="caption">Conceptual diagram illustrating the reservoir concept [3][4].</p>
+  </div>
 </section>
 
+<h2>2. Biofilm Formation Mechanism</h2>
+<p>Biofilm is a three-dimensional structure consisting of microbial biomass embedded in extracellular polymeric substance (EPS) and water. Its formation proceeds through five successive stages: initial attachment, irreversible attachment, microcolony formation, maturation, and dispersion [2].</p>
+<h3>2.1 Initial Attachment</h3>
+<p>Free-living planktonic bacteria approach a solid surface in contact with water. Attachment may involve flagella, pili, fimbriae, and physical forces such as van der Waals, electrostatic, and hydrophobic interactions [2].</p>
+<h3>2.2 Irreversible Attachment</h3>
+<p>Attachment forces overcome repulsion and cells become permanently attached. Bacteria produce EPS, converting transient attachment into stable attachment [2].</p>
+<h3>2.3 Microcolony Formation</h3>
+<p>Cells divide and form microcolonies, with chemical signaling and cooperative relationships developing between microbial populations [2].</p>
+<h3>2.4 Maturation</h3>
+<p>Colonies increase in size and thickness while EPS stabilizes the structure and contributes to protection from antimicrobials and disinfectants. Quorum sensing can regulate biofilm development [2].</p>
+<h3>2.5 Dispersion</h3>
+<p>Cells detach from mature biofilm and colonize new surfaces, restarting the cycle [2].</p>
+<h3>2.6 Environmental Factors</h3>
+<p>Slow flow, warm poultry-house temperatures, poor water quality, and microbial contamination favor biofilm formation. Biofilm can re-establish rapidly after cleaning in favorable systems [3].</p>
+
+<h2>3. Microorganisms Protected by Biofilm</h2>
+<p>Biofilm can protect a wide range of microorganisms. In a Belgian field study of five broiler farms, dominant genera on drinking-system surfaces included <em>Pseudomonas</em>, <em>Stenotrophomonas maltophilia</em>, <em>Sphingomonas</em>, <em>Chryseobacterium</em>, <em>Acinetobacter</em>, <em>Shewanella</em>, <em>Microbacterium</em>, and <em>Pseudoxanthomonas</em> [4].</p>
+<p>Pathogens reported to form biofilm or occur repeatedly in poultry drinking-water systems include <em>Escherichia coli</em> (APEC), <em>Salmonella</em>, <em>Campylobacter</em>, <em>Pseudomonas</em>, <em>Aeromonas</em>, <em>Bacillus</em>, and <em>Sphingomonas</em> [4][5][6][7].</p>
+
+<h2>4. Bacterial Concentrations and Infectious Challenge Doses</h2>
+<p>There is no single universal pathogenic concentration because risk depends on the organism, virulence, bird age, immunity, environmental stressors, and route of exposure [5][8]. Drinking-water quality indicators and experimental challenge doses should not be interpreted as equivalent measures of disease risk.</p>
+<ul>
+<li>Total bacterial count: &lt;1000 CFU/ml is presented as acceptable in the cited references [8][9].</li>
+<li>Fecal <em>E. coli</em>: 0 CFU/ml is presented as the target [8][9].</li>
+<li>Experimental APEC challenge: 1×10⁷ to 2.5×10⁷ CFU/chick in the cited hatchery spray model [11].</li>
+<li><em>Salmonella</em> and <em>Campylobacter</em> challenge doses vary strongly by age and route [12][13][14][15].</li>
+</ul>
+
+<h2>5. Is Biofilm the Primary Source of E. coli in Poultry?</h2>
+<h3>5.1 Short Answer</h3>
+<p><strong>No.</strong> Biofilm is an important and amplifying reservoir within water systems, but it is not the primary global source of APEC. APEC is a multifactorial infection with multiple sources and routes [5][6][16][17].</p>
+<h3>5.2 Major APEC Sources and Routes</h3>
+<ul>
+<li><strong>Normal intestinal flora:</strong> <em>E. coli</em> is a normal intestinal organism and disease can occur when host defenses are compromised [5].</li>
+<li><strong>Hatching-egg contamination:</strong> vertical transmission is an important route and can contribute to early chick mortality [16][17].</li>
+<li><strong>Fecal dust and contaminated air:</strong> inhalation is a confirmed route of APEC transmission and respiratory damage can predispose birds to disease [16][18].</li>
+<li><strong>Contaminated water and feed:</strong> contaminated water or feed can introduce pathogenic strains [5][16].</li>
+<li><strong>Hatchery and environment:</strong> contaminated chicks, eggs, equipment, feathers, and feces can support horizontal transmission [16][17].</li>
+</ul>
+<h3>5.3 Analytical Conclusion</h3>
+<p>Biofilm in water lines can act as a persistent operational reservoir and may become a major source on an individual farm when lines are heavily contaminated. However, it is not the primary global source of APEC [5][16][17][18].</p>
+
+<h2>6. Sugars and Dissolved Nutrients</h2>
+<p>Sugars and dissolved nutrients introduced through drinking-water medications and vitamins can contribute to biofilm nutrition [10][1]. Reported examples include sugar water, vitamins, electrolytes, antibiotics, flavored gelatin mixtures, and stabilizers [10].</p>
+<p>After treatment or vitamin administration, flushing and sanitation of water lines is recommended to reduce organic residues that can support biofilm [10][1].</p>
+
+<h2>7. Infection Pathways: Is Water the Main Route?</h2>
+<p>Water is an important route but is not the only or always the most fundamental route [5][16][18]. Major pathways include respiratory exposure, fecal-oral transmission, contaminated water, vertical transmission through eggs, ascending cloacal routes, skin/navel entry points, and mechanical vectors such as equipment, rodents, and insects.</p>
+<section class="visual-grid">
+  <div class="visual-card wide">
+    <h3>Major Infection Pathways</h3>
+    <svg viewBox="0 0 1000 360" role="img" aria-label="Major poultry infection pathways">
+      <g font-family="Arial,sans-serif" text-anchor="middle">
+        <circle cx="500" cy="180" r="72" fill="#f4efe6" stroke="#9a6a2f" stroke-width="4"/>
+        <text x="500" y="174" font-size="22">Bird</text><text x="500" y="203" font-size="16">Multifactorial infection</text>
+        <g fill="#eef7fb" stroke="#287b9c" stroke-width="3">
+          <rect x="55" y="55" width="180" height="58" rx="16"/><rect x="410" y="35" width="180" height="58" rx="16"/><rect x="765" y="55" width="180" height="58" rx="16"/>
+          <rect x="55" y="250" width="180" height="58" rx="16"/><rect x="410" y="267" width="180" height="58" rx="16"/><rect x="765" y="250" width="180" height="58" rx="16"/>
+        </g>
+        <text x="145" y="91" font-size="18">Dust / air</text><text x="500" y="71" font-size="18">Eggs / hatchery</text><text x="855" y="91" font-size="18">Water / biofilm</text>
+        <text x="145" y="286" font-size="18">Feed / litter</text><text x="500" y="303" font-size="18">Cloacal / ascending</text><text x="855" y="286" font-size="18">Mechanical vectors</text>
+      </g>
+    </svg>
+  </div>
+</section>
+<h3>7.1 Relative Priority</h3>
+<ul>
+<li>Systemic APEC: respiratory exposure to contaminated dust is central, especially with ammonia and respiratory disease [16][18].</li>
+<li>Young chicks: egg and hatchery contamination are major concerns for early mortality [17].</li>
+<li><em>Salmonella</em>: primarily fecal-oral, with water and biofilm contributing [13].</li>
+<li><em>Campylobacter</em>: primarily fecal-oral, with very low experimental colonization doses reported [14][15].</li>
+</ul>
+
+<h2>8. Conclusions and Recommendations</h2>
+<ol>
+<li>Biofilm is an organized structure that develops through five stages and can form readily in poultry water lines under favorable conditions [2][3].</li>
+<li>Biofilm can protect a broad range of microorganisms, including <em>E. coli</em>, <em>Salmonella</em>, <em>Campylobacter</em>, and <em>Pseudomonas</em> [1][4].</li>
+<li>There is no single universal pathogenic concentration; water-quality indicators provide practical monitoring benchmarks [8][9].</li>
+<li>Biofilm is not the primary global source of APEC, but it can be a persistent and amplifying reservoir [5][16][17].</li>
+<li>Sugars and dissolved nutrients in drinking-water products can support biofilm, so lines should be flushed after treatment or vitamin cycles [10][1].</li>
+<li>Water is important but works together with respiratory, vertical, fecal-oral, environmental, and mechanical routes [5][16][17][18].</li>
+</ol>
+<h3>Integrated Management Recommendations</h3>
+<ul>
+<li>Sanitize water lines between flocks using appropriate cleaners and disinfectants [1].</li>
+<li>Flush lines after medication or vitamin cycles [10].</li>
+<li>Maintain the cited free-chlorine and pH targets when applicable to the farm's water-management program [10].</li>
+<li>Control ventilation, ammonia, and dust to protect the respiratory tract [18].</li>
+<li>Improve egg and hatchery hygiene to reduce vertical transmission [16][17].</li>
+<li>Control rodents and insects and disinfect houses between flocks [5][16].</li>
+</ul>
+
+<h2 id="references">References</h2>
+<p>[1] Huvepharma. Biofilms and drinking water treatment. https://www.huvepharma.com/news/article/biofilms-and-drinking-water-treatment/</p>
+<p>[2] Mishra M, Kumar S, Gupta A, et al. Microbial Biofilm: A Review on Formation, Infection, Antibiotic Resistance, Control Measures, and Innovative Treatment. Microorganisms. 2023. https://pmc.ncbi.nlm.nih.gov/articles/PMC10305407/</p>
+<p>[3] University of Georgia Cooperative Extension. Biofilms in Poultry Drinkers. Poultry Tips; July 2006. https://poultry.caes.uga.edu/content/dam/caes-subsite/poultry/documents/archived-poultry-tips/biofilms-in-poultry-drinkers-jul-06.pdf</p>
+<p>[4] Maes S, Vackier T, Nguyen Huu S, et al. Occurrence and characterisation of biofilms in drinking water systems of broiler houses. BMC Microbiology. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC6466764/</p>
+<p>[5] Merck Veterinary Manual. Colibacillosis in Poultry. https://www.merckvetmanual.com/poultry/colibacillosis/colibacillosis-in-poultry</p>
+<p>[6] Tivendale KA, et al. Avian pathogenic Escherichia coli: Epidemiology, virulence, and control. Frontiers in Veterinary Science. 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC8069529/</p>
+<p>[7] University of Arkansas Agricultural Experiment Station. Poultry Water Biofilm Research Highlights. 2025. https://aaes.uada.edu/research-highlights/poultry-water-biofilm/</p>
+<p>[8] Mississippi State University Extension. Water Quality Critical to Broiler Performance. Publication P2754. https://extension.msstate.edu/publications/water-quality-critical-broiler-performance</p>
+<p>[9] University of Veterinary Medicine Vienna. Determination of the microbiological load of poultry drinking water. https://phaidra.vetmeduni.ac.at/api/object/o:1320/get</p>
+<p>[10] ThePoultrySite. Poultry Water Line Sanitation. https://www.thepoultrysite.com/articles/poultry-water-line-sanitation</p>
+<p>[11] Cox NA, et al. Research Note: Application of an Escherichia coli spray challenge model to assess horizontal transmission in broiler hatchers. Poultry Science. 2021. https://pmc.ncbi.nlm.nih.gov/articles/PMC7905460/</p>
+<p>[12] Hinz KH, et al. Model for experimental efficacy testing of control measures against Salmonella infections in poultry. PubMed. 1995. https://pubmed.ncbi.nlm.nih.gov/8582255/</p>
+<p>[13] Cummings RB, et al. Evaluation of the respiratory route as a viable portal of entry for Salmonella in poultry. PMC. 2014. https://pmc.ncbi.nlm.nih.gov/articles/PMC4990883/</p>
+<p>[14] Sahin O, et al. Sources of Campylobacter Colonization in Broiler Chickens. PMC. 2000. https://pmc.ncbi.nlm.nih.gov/articles/PMC169125/</p>
+<p>[15] Corcionivoschi N, et al. Campylobacter jejuni in Poultry: Pathogenesis and Control Strategies. PMC. 2022. https://pmc.ncbi.nlm.nih.gov/articles/PMC9697106/</p>
+<p>[16] Nazir S, et al. Avian pathogenic Escherichia coli: Epidemiology, virulence, and pathogenesis. PMC. 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC11784041/</p>
+<p>[17] Ahmed AM, et al. Avian Pathogenic Escherichia coli (APEC) in Broiler Breeders. PMC. 2023. https://pmc.ncbi.nlm.nih.gov/articles/PMC10674223/</p>
+<p>[18] Frontiers in Veterinary Science. Predisposition factors and control strategies of avian pathogenic Escherichia coli in laying hens. 2024. https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2024.1474549/full</p>
+<p><em>This report is based on the cited scientific and veterinary sources. Field implementation should be adapted to farm conditions and veterinary guidance.</em></p>
+</div></main>
+<div class="footer">تم الحفاظ على نص التقرير ومراجعه كما وردت في الملف المرفوع، مع إضافة طبقة عرض HTML ورسومات توضيحية ذاتية الاكتفاء.</div>
+</div>
+
+<script>
+function toggleLanguage(){
+  const ar=document.getElementById('arabicContent');
+  const en=document.getElementById('englishContent');
+  const btn=document.getElementById('langBtn');
+  const icon=document.getElementById('langIcon');
+  const nav=document.querySelector('.nav');
+  const hero=document.querySelector('.hero');
+  const isEnglish=!en.hidden;
+
+  ar.hidden=isEnglish;
+  en.hidden=!isEnglish;
+  document.documentElement.lang=isEnglish?'ar':'en';
+  document.documentElement.dir=isEnglish?'rtl':'ltr';
+  document.body.dir=isEnglish?'rtl':'ltr';
+
+  if(isEnglish){
+    btn.innerHTML='العربية';
+    nav.innerHTML='<a href="#summary">Summary</a><a href="#references">References</a>';
+    hero.querySelector('h1').textContent='Scientific Report: Biofilm in Poultry Farms';
+    hero.querySelectorAll('p')[0].textContent='Formation, associated microbes, and infection pathways';
+    hero.querySelectorAll('p')[1].textContent='Date: August 2026';
+  }else{
+    btn.innerHTML='English';
+    nav.innerHTML='<a href="#summary">الملخص</a><a href="#section2">التكوين</a><a href="#section3">الميكروبات</a><a href="#section5">APEC</a><a href="#section7">مسارات العدوى</a><a href="#references">المراجع</a>';
+    hero.querySelector('h1').textContent='تقرير علمي: البيوفيلم في مزارع الدواجن';
+    hero.querySelectorAll('p')[0].textContent='التكوين، الميكروبات المرتبطة، ومسارات العدوى';
+    hero.querySelectorAll('p')[1].textContent='التاريخ: أغسطس 2026';
+  }
+}
+</script>
 </body>
 </html>
