@@ -29,7 +29,9 @@ table{border-collapse:collapse;width:100%}
 th,td{text-align:start;padding:10px 12px;font-size:.88rem;border-bottom:1px solid #E1DACA;vertical-align:top}
 th{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.08em;color:#8A6A12;text-transform:uppercase;font-weight:500}
 @page{size:A4;margin:12mm}
-@media print{body{background:#FFF!important}[data-noprint]{display:none!important}section,article,footer{break-inside:avoid;page-break-inside:avoid}h1,h2,h3{break-after:avoid}img{max-width:100%!important}}
+@media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{background:#FFF!important}#html-root{max-width:none!important;box-shadow:none!important}[data-noprint]{display:none!important}article,figure,tr,h3,footer{break-inside:avoid;page-break-inside:avoid}h1,h2,h3{break-after:avoid}img,svg{max-width:100%!important}section,header{padding-left:20px!important;padding-right:20px!important}a{text-decoration:none}}
+.pdf-btn{font-family:'Cairo','Noto Sans Devanagari',sans-serif;font-size:.72rem;font-weight:600;background:#D9B24C;color:#15160F;border:none;border-radius:3px;padding:5px 12px;cursor:pointer}
+.pdf-btn:hover{background:#EFEBE1}
 .t-en,.t-hi{direction:ltr;unicode-bidi:isolate}
 .t-hi{font-family:'Noto Sans Devanagari','Cairo',sans-serif;letter-spacing:0!important}
 .t-ur{font-family:'Noto Nastaliq Urdu','Cairo',serif;direction:rtl;unicode-bidi:isolate;line-height:2.25;letter-spacing:0!important;font-size:.94em}
@@ -50,6 +52,7 @@ h1 .t-ur,h2 .t-ur{line-height:1.9}
   </span>
   <span style="display:flex;align-items:center;gap:14px">
     <span style="color:#D9B24C"><span class="t-ar">العدد ٤١ · الجمعة ٢ أكتوبر ٢٠٢٦</span><span class="t-en" hidden>Issue 41 · Friday, Oct 2, 2026</span><span class="t-hi" hidden>अंक 41 · शुक्रवार, 2 अक्टूबर 2026</span><span class="t-ur" hidden>شمارہ 41 · جمعہ، 2 اکتوبر 2026</span></span>
+    <button class="pdf-btn" onclick="printIssue()" title="PDF">⬇ <span class="t-ar">حفظ PDF / طباعة</span><span class="t-en" hidden>Save PDF / Print</span><span class="t-hi" hidden>PDF सहेजें / प्रिंट</span><span class="t-ur" hidden>PDF محفوظ کریں / پرنٹ</span></button>
     <span class="lang-toggle">
       <button class="lang-btn active" id="btn-ar" onclick="setLang('ar')">عر</button>
       <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
@@ -614,6 +617,10 @@ h1 .t-ur,h2 .t-ur{line-height:1.9}
 
 <script>
 var TITLES={ar:'نشرة أوركيد العلمية الأسبوعية — العدد ٤١ — ٢ أكتوبر ٢٠٢٦',en:'Orkid Weekly Scientific Bulletin — Issue 41 — Oct 2, 2026',hi:'ऑर्किड साप्ताहिक वैज्ञानिक बुलेटिन — अंक 41 — 2 अक्टूबर 2026',ur:'آرکڈ ہفتہ وار سائنسی بلیٹن — شمارہ 41 — 2 اکتوبر 2026'};
+function printIssue(){
+  try{ if(typeof gtag === 'function'){ gtag('event','pdf_print',{language:(document.getElementById('html-root')||{}).lang||'ar'}); } }catch(e){}
+  window.print();
+}
 function setLang(lang){
   var root = document.getElementById('html-root') || document.documentElement;
   ['ar','en','hi','ur'].forEach(function(l){
